@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #68b88e;
+}
+
+* {
+  font-weight: 400;
+  margin: 0;
+}
+
+html, body {
+  font-family: "Roboto", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, serif;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10px;
+  word-spacing: 1px;
+  color: #666;
+  box-sizing: border-box;
+}
+
+#app {
+  padding: 0 3rem 5rem;
+}
+
+a:active{
+  color: var(--primary-color)
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+}
+
+.dark [class*="-light"] {
+  display: none;
+}
+
+.light [class*="-dark"] {
+  display: none;
+}
