@@ -9,7 +9,7 @@
   "scripts": {
     "theme": "cd docs/.vitepress/ && rm -rf theme && ln -s ../../src theme && cd ../../",
     "dev": "vitepress dev docs",
-    "build": "npm run theme && vitepress build docs"
+    "build": "vitepress build docs"
   },
   "peerDependencies": {
     "typescript": "^4.6.3"
