@@ -6,7 +6,7 @@ async function config() {
   const posts = await getPosts('en-US', 'Asia/Shanghai')
   return defineConfigWithTheme<ThemeLinearConfig>({
     title: 'Dustella的糖果店',
-    description: '你好',
+    description: '咕噜咕噜咕噜',
     markdown: {
       theme: {
         light: 'css-variables',
@@ -24,8 +24,17 @@ async function config() {
           link: 'https://github.com/Dustella',
           icon: '/assets/images/github.svg',
         },
-        { name: 'Posts', link: '/posts', icon: '/assets/images/post.svg' },
-        { name: 'Links', link: '/links', icon: '/assets/images/link.svg' },
+        {
+          name: 'Posts',
+          link: '/posts',
+          icon: '/assets/images/article-fill.svg',
+        },
+        { name: 'Links', link: '/links', icon: '/assets/images/friends.svg' },
+        {
+          name: 'Telegram',
+          link: 'https://t.me/Dustella',
+          icon: 'assets/images/telegram.svg',
+        },
       ],
       posts,
       favicon: 'https://img-cdn.dustella.net/avtr.jpg',

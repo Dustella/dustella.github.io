@@ -1,15 +1,14 @@
 {
-  "name": "dustella_s_blog",
+  "name": "dustella_s_candystore",
   "version": "0.0.10",
   "packageManager": "pnpm@6.32.6",
   "description": "A blog here",
   "keywords": [],
-  "license": "GPL-3.2",
+  "license": "AGPL-3.0-or-later",
   "author": "Dustella",
   "scripts": {
-    "theme": "cd docs/.vitepress/ && rm -rf theme && ln -s ../../src theme && cd ../../",
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs"
+    "dev": "vitepress dev",
+    "build": "vitepress build"
   },
   "peerDependencies": {
     "typescript": "^4.6.3"

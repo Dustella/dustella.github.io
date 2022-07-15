@@ -13,7 +13,7 @@ const pathObj = computed(() => {
 <template>
   <!-- eslint-disable-next-line vue/valid-v-on -->
   <p>
-    <a v-if="pathObj.route.path !== '/'" :href="pathObj.path">cd ../</a>
+    <a v-if="pathObj.route.path !== '/'" :href="pathObj.path">回到上一级</a>
   </p>
   <p>
     <a class="icp">苏ICP备20013766号-2</a>

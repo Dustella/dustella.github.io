@@ -32,7 +32,7 @@ header > *:not(:last-child){
   margin-bottom: 2rem;
 }
 .title{
-  letter-spacing: 4px;
+  letter-spacing: 0.2rem;
   font-size: 2.6rem;
   color: #444;
 }
@@ -40,7 +40,7 @@ header > *:not(:last-child){
   color: #444;
 }
 .sub-title{
-  letter-spacing: 3px;
+  letter-spacing: 0.1rem;
   font-size: 1.3rem;
 }
 p{
