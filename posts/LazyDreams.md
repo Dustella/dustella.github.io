@@ -1,5 +1,6 @@
 ---
-title: 夏日的梦。
+title: 夏日的梦
+desciption: 今天我做了一个十年前的梦
 ---
 
 # Lazy Dreams

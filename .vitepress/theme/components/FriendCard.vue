@@ -55,6 +55,7 @@ const jump = () => setTimeout(() => { window.open(props.userInfo.link) }, 300)
   float: left;
   background: v-bind(avtr);
   background-size: cover;
+  background-position: center;
   border-radius: 50%;
   animation: load89234 2s infinite;
   transition: all 0.7s;
