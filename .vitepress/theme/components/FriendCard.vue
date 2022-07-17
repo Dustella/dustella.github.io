@@ -5,12 +5,12 @@ const props = defineProps({ userInfo: { type: Object } })
 const avtr = computed(() => {
   return `url(${props.userInfo.avatar})`
 })
-const jump = () => window.open(props.userInfo.link)
+const jump = () => setTimeout(() => { window.open(props.userInfo.link) }, 300)
 </script>
 
 <template>
   <div class="card" @click="jump">
-    <div class="card_load" />
+    <div class="card-load" />
     <div class="right-container">
       <div class="card_load_extreme_title">
         {{ props.userInfo.name }}
@@ -22,7 +22,7 @@ const jump = () => window.open(props.userInfo.link)
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .card {
     position: relative;
   width: 80%;
@@ -32,9 +32,22 @@ const jump = () => window.open(props.userInfo.link)
   margin: 2rem auto;
   padding: 2rem;
   cursor: pointer;
+  transition: all 0.7s;
+  @media only screen and (max-width: 600px){
+    height: 20rem;
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+  }
+  &:hover{
+    transform: scale(1.1,1.1);
+    .card-load {
+      transform: scale(1.2,1.2);
+    }
+  }
 }
 
-.card_load {
+.card-load {
   width: 5rem;
   height: 5rem;
   position: relative;
@@ -44,14 +57,24 @@ const jump = () => window.open(props.userInfo.link)
   background-size: cover;
   border-radius: 50%;
   animation: load89234 2s infinite;
+  transition: all 0.7s;
+  @media only screen and (max-width: 600px){
+    height: 10rem;
+    width: 10rem;
+    margin: 1rem auto;
+  }
 }
 
 .right-container{
-    width: 70%;
   float: left;
   position: relative;
   left: 2rem;
   right: 1rem;
+  @media only screen and (max-width: 600px){
+    left: 0;
+    right: 0;
+    top: 2rem;
+  }
 }
 
 .card_load_extreme_title {
@@ -64,6 +87,11 @@ const jump = () => window.open(props.userInfo.link)
   background-position: 100% 0;
   font-size: 2rem;
   color: #828282;
+    @media only screen and (max-width: 600px){
+    font-size: 1.7rem;
+    line-height: 1rem;
+    text-align: center;
+  }
 }
 
 .card_load_extreme_descripion {
@@ -79,6 +107,11 @@ const jump = () => window.open(props.userInfo.link)
   line-height: 4.5rem;
   font-size: 1.4rem;
   color: #a4a4a4;
+    @media only screen and (max-width: 600px){
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+  }
 }
 
 </style>

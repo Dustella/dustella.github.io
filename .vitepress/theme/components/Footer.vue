@@ -15,6 +15,9 @@ const pathObj = computed(() => {
   <p>
     <a v-if="pathObj.route.path !== '/'" :href="pathObj.path">回到上一级</a>
   </p>
+  <p v-if="pathObj.route.path !== '/'">
+    Under CC BY-NC-ND 4.0
+  </p>
   <p>
     <a class="icp">苏ICP备20013766号-2</a>
   </p>
@@ -25,6 +28,7 @@ p {
   margin-top: 3rem;
   display: block;
   font-size: 1.3rem;
+  text-align: center;
 }
 
 p a {

@@ -7,11 +7,9 @@ async function config() {
   return defineConfigWithTheme<ThemeLinearConfig>({
     title: 'Dustella的糖果店',
     description: '咕噜咕噜咕噜',
+    appearance: true,
     markdown: {
-      theme: {
-        light: 'css-variables',
-        dark: 'css-variables',
-      },
+      theme: 'css-variables',
     },
     themeConfig: {
       comment: {

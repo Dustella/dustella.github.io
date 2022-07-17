@@ -1,9 +1,13 @@
 ---
+title: 主页
 ---
 
-## 嘿，这里是 Dustella
+<h3 align="center"> 嘿，这里是 Dustella </h3>
 
+<h4 align="center">
+我会在花室凿一扇天窗，为你接住霓虹与星光。
+</h4>
 
-我们就做一个观察者，也不错
-
-是[lixiang810](https://github.com/lixiang810)的男朋友
+<h4 align="center">
+是 <a href="https://lixiang810.github.io" target="_blank">lixiang810</a> 的伴侣
+</h4>

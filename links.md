@@ -2,6 +2,6 @@
 title: Links
 ---
 
-## 这些是我的朋友们
+<h3 align="center">友链</h3>
 
 <FriendList />
