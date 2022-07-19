@@ -3,7 +3,7 @@ title: 主页
 ---
 
 <script setup>
-const isFromMyWife = document.referer == "stblog.penclub.club" 
+const isFromMyWife = document.referer == "https://stblog.penclub.club" 
 console.log(`isFromMyWife: ${isFromMyWife}`)
 </script>
 
