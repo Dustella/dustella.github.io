@@ -2,6 +2,11 @@
 title: 主页
 ---
 
+<script setup>
+const isFromMyWife = document.referer == "stblog.penclub.club" 
+console.log(`isFromMyWife: ${isFromMyWife}`)
+</script>
+
 <h3 align="center"> 嘿，这里是 Dustella </h3>
 
 <h4 align="center">
