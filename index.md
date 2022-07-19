@@ -3,8 +3,9 @@ title: 主页
 ---
 
 <script setup>
-const isFromMyWife = document.referer == "https://stblog.penclub.club/" 
+const isFromMyWife = document.referrer == "https://stblog.penclub.club/" 
 console.log(`isFromMyWife: ${isFromMyWife}`)
+console.log(document.referrer)
 </script>
 
 <h3 align="center"> 嘿，这里是 Dustella </h3>
