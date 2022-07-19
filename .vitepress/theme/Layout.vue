@@ -2,13 +2,14 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import CustomHead from './components/CustomHead.vue'
+
 </script>
 
 <template>
   <CustomHead />
-  <Header />
+  <Header class="animate__fadeInDown animate__animated" />
   <div class="main">
-    <Content class="article" />
+    <Content class="article animate__fadeInUp animate__animated" />
     <Footer />
   </div>
 </template>

@@ -7,6 +7,7 @@ import './styles/global.css'
 import './styles/shiki.css'
 import './styles/article.css'
 import './styles/reactivity.css'
+import 'animate.css'
 
 import Layout from './Layout.vue'
 import NotFound from './NotFound.vue'
