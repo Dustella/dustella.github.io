@@ -6,5 +6,5 @@ const info = [lixiang, ...toSort.sort(() => Array.from(crypto.getRandomValues(ne
 </script>
 
 <template>
-  <friend-card v-for="i in info" :key="i" :user-info="i" />
+  <friend-card v-for="i in info" :key="i" :user-info="i" class="container relative" />
 </template>
