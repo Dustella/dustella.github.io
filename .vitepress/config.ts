@@ -1,7 +1,11 @@
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
+import { SitemapStream } from 'sitemap'
 import { defineConfigWithTheme } from 'vitepress'
 import type { ThemeLinearConfig } from './theme/types'
 import { getPosts } from './theme/config'
 
+const links = [] as { url: string; lastmod: number | undefined }[]
 async function config() {
   const posts = await getPosts('en-US', 'Asia/Shanghai')
   return defineConfigWithTheme<ThemeLinearConfig>({
@@ -41,6 +45,19 @@ async function config() {
       ],
       posts,
       favicon: 'https://img-cdn.dustella.net/avtr.jpg',
+    },
+    transformHtml: async (_, id, { pageData }) => {
+      links.push({
+        url: pageData.relativePath.replace(/((^|\/)index)?\.md$/, '$2'),
+        lastmod: pageData.lastUpdated,
+      })
+    },
+    buildEnd: async ({ outDir }) => {
+      const sitemap = new SitemapStream({ hostname: 'https://dustella.net/' })
+      const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+      sitemap.pipe(writeStream)
+      links.forEach(link => sitemap.write(link))
+      sitemap.end()
     },
   })
 }
