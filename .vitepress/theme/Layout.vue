@@ -6,11 +6,13 @@ import CustomHead from './components/CustomHead.vue'
 </script>
 
 <template>
-  <CustomHead />
-  <Header class="animate__fadeInDown animate__animated" />
-  <div class="main">
-    <Content class="article animate__fadeInUp animate__animated" />
-    <Footer />
+  <div class="wrapper">
+    <CustomHead />
+    <Header class="animate__fadeInDown animate__animated" />
+    <div class="main">
+      <Content class="article animate__fadeInUp animate__animated" />
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -18,5 +20,9 @@ import CustomHead from './components/CustomHead.vue'
 .main{
   max-width: 75rem;
   margin: 50px auto;
+}
+
+.wrapper {
+  background: url();
 }
 </style>

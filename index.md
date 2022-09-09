@@ -2,19 +2,10 @@
 title: 主页
 ---
 
-<script setup>
-const isFromMyWife = document.referrer == "https://stblog.penclub.club/" 
-if (isFromMyWife) {
-    console.log("我和lixiang永远属于彼此")
-}
-</script>
-
-<h3 align="center"> 嘿，这里是 lixiang 的老公 Dustella </h3>
+<h3 align="center"> 嘿，Dustella Here </h3>
+<h4 align="center"> 佛系前端&运维，稍微会点这种魔法 </h4>
+<h4 align="center"> 是 <a href="https://me.penclub.club">lixiang</a> 的男朋友  </h4>
 
 <h4 align="center">
 我会在花室凿一扇天窗，为你接住霓虹与星光。
-</h4>
-
-<h4 align="center" v-if="isFromMyWife">
-是 <a href="https://lixiang810.github.io" target="_blank">lixiang810</a> 的伴侣
 </h4>
