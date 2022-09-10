@@ -7,7 +7,7 @@
         "client": {
             "use": "@cloudbase/framework-plugin-website",
             "inputs": {
-              "installCommand": "",
+              "installCommand": "pnpm install",
               "buildCommand": "",
               "outputPath": ".vitepress/dist",
               "cloudPath": "/",
