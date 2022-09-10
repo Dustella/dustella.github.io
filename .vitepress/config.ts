@@ -8,6 +8,7 @@ import { getPosts } from './theme/config'
 const links = [] as { url: string; lastmod: number | undefined }[]
 async function config() {
   const posts = await getPosts('en-US', 'Asia/Shanghai')
+  const whispers = await getPosts('en-US', 'Asia/Shanghai', 'whispers')
   return defineConfigWithTheme<ThemeLinearConfig>({
     title: 'Dustella的糖果店',
     description: '糖果店没有糖果',
@@ -17,7 +18,7 @@ async function config() {
     },
     themeConfig: {
       comment: {
-        repo: 'nodoubt0322/blog',
+        repo: 'Dustella/CandyStore',
         issueTerm: 'pathname',
       },
       links: [
@@ -36,6 +37,11 @@ async function config() {
           link: '/posts',
           icon: '/assets/images/article-fill.svg',
         },
+        {
+          name: 'Whispers',
+          link: '/whispers',
+          icon: '/assets/images/article-fill.svg',
+        },
         { name: 'Links', link: '/links', icon: '/assets/images/friends.svg' },
         {
           name: 'Telegram',
@@ -44,6 +50,7 @@ async function config() {
         },
       ],
       posts,
+      whispers,
       favicon: 'https://img-cdn.dustella.net/avtr.jpg',
     },
     transformHtml: async (_, id, { pageData }) => {

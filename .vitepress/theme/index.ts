@@ -16,6 +16,7 @@ import NotFound from './NotFound.vue'
 import PostList from './components/PostList.vue'
 import Comment from './components/Comment.vue'
 import FriendList from './components/FriendList.vue'
+import WhispersList from './components/WhispersList.vue'
 
 const head = createHead()
 
@@ -26,6 +27,7 @@ const theme: Theme = {
     app.component('PostList', PostList)
     app.component('Comment', Comment)
     app.component('FriendList', FriendList)
+    app.component('WhispersList', WhispersList)
     app.use(head)
   },
 }
