@@ -1,0 +1,19 @@
+{
+    "envId": "{{env.ENV_ID}}",
+    "version": "2.0",
+    "framework": {
+      "name": "gh-actions-push",
+      "plugins": {
+        "client": {
+            "use": "@cloudbase/framework-plugin-website",
+            "inputs": {
+              "installCommand": "",
+              "buildCommand": "",
+              "outputPath": ".vitepress/dist",
+              "cloudPath": "/",
+              "ignore": [".git", ".github", "node_modules", "cloudbaserc.js"]
+            }
+          }
+      }
+    }
+  }
