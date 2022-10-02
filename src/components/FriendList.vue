@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ls from '../../../friends.json'
+import ls from '../../friends.json'
 import FriendCard from './FriendCard.vue'
 
 const [lixiang, ...toSort] = ls

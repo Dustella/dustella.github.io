@@ -30,8 +30,8 @@ jobs:
         
       - name: Install dependency and build
         run: | 
-         npm install -g pnpm
-         pnpm install
+         corepack enable
+         pnpm i
          pnpm build
         
       - name: Push to Cloudbase
