@@ -9,7 +9,7 @@
             "inputs": {
               "installCommand": "pnpm install",
               "buildCommand": "",
-              "outputPath": ".vitepress/dist",
+              "outputPath": "dist",
               "cloudPath": "/",
               "ignore": [".git", ".github", "node_modules", "cloudbaserc.js"]
             }
