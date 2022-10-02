@@ -13,7 +13,7 @@ export const SITE_LINKS = [
   {
     name: 'GitHub',
     link: 'https://github.com/Dustella',
-    icon: '/icons/GitHub.svg',
+    icon: '/icons/gitHub.svg',
   },
   {
     name: 'Posts',
