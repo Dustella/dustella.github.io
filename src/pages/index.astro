@@ -1,0 +1,26 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1 class="text-center">🧑‍🚀 Dustella Here</h1>
+      <h4 class="text-center">佛系前端&运维，稍微会点这种魔法</h4>
+      <h4 class="text-center">
+        是 <a href="https://me.penclub.club">lixiang810</a> 的男朋友
+      </h4>
+
+      <h4 class="text-center">我会在花室凿一扇天窗，为你接住霓虹与星光。</h4>
+    </main>
+    <Footer />
+  </body>
+</html>

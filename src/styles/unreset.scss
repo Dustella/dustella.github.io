@@ -1,0 +1,136 @@
+
+p {
+	margin: 1em 0;
+}
+
+blockquote,
+figure {
+	margin: 1em 40px;
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+
+	&:before {
+		content: open-quote;
+	}
+
+	&:after {
+		content: close-quote;
+	}
+}
+
+hr {
+	border: 1px inset;
+	box-sizing: border-box;
+	margin: 0.5em auto;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 0.83em 0;
+}
+
+h3 {
+	font-size: 1.17em;
+	margin: 1em 0;
+}
+
+h4 {
+	font-size: 1.00em;
+	margin: 1.33em 0;
+}
+
+h5 {
+	font-size: 0.83em;
+	margin: 1.67em 0;
+}
+
+h6 {
+	font-size: 0.67em;
+	margin: 2.33em 0;
+}
+
+article, aside, nav, section {
+
+	h1 {
+		font-size: 1.5em;
+
+		margin: 0.83em 0;
+	}
+
+	article, aside, nav, section {
+
+		h1 {
+			font-size: 1.17em;
+	
+			margin: 1em 0;
+		}
+
+		article, aside, nav, section {
+
+			h1 {
+				font-size: 1.00em;
+		
+				margin: 1.33em 0;
+			}
+
+			article, aside, nav, section {
+
+				h1 {
+					font-size: 0.83em;
+			
+					margin: 1.67em 0;
+				}
+
+				article, aside, nav, section {
+
+					h1 {
+						font-size: 0.67em;
+				
+						margin: 2.33em 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
+}
+
+thead,
+tbody,
+tfoot,
+tr {
+	border-color: inherit;
+	vertical-align: middle;
+}
+
+td, th {
+	padding: 1px;
+	vertical-align: inherit;
+}
+
+th {
+	font-weight: bold
+}
+
+caption {
+	text-align: center;
+}
+
+ul, menu {
+	list-style-type: disc;
+	margin: 1em 0;
+	padding: 0 0 0 40px;
+}
+

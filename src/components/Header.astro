@@ -1,0 +1,39 @@
+---
+import { SITE_TITLE, SITE_LINKS, SITE_DESCRIPTION } from "../config";
+import "../styles/unreset.scss";
+---
+
+<header>
+  <h2 class="text-center font-bold">
+    {SITE_TITLE}
+  </h2>
+  <h4 class="text-center font-semibold">{SITE_DESCRIPTION}</h4>
+  <nav>
+    {
+      SITE_LINKS.map((item) => (
+        <a href={item.link} class="links">
+          <img src={item.icon} alt="item.name" width="20" height="20" />
+          <p>{item.name}</p>
+        </a>
+      ))
+    }
+  </nav>
+</header>
+<style>
+  header {
+    margin: 0em 0 2em;
+  }
+  h2 {
+    margin: 0.5em 0;
+  }
+  nav {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .links {
+    display: flex;
+    color: gray;
+  }
+</style>
