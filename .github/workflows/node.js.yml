@@ -1,4 +1,4 @@
-name: CI
+name: Tencent Cloud Base Deploy
 
 on:
   push:
