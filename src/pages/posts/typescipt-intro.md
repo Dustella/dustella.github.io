@@ -58,8 +58,8 @@ npm install -g ts-node
 我们直接来观看一下 TypeScript 是如何进行类型声明的：
 
 ```ts
-const a: string = ''
-const b: number = 0
+const a = ''
+const b = 0
 const c: number[] = [0, 0, 1]
 ```
 

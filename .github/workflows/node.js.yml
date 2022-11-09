@@ -2,10 +2,9 @@ name: Tencent Cloud Base Deploy
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
   pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+    branches: [master]
 
 jobs:
   build:
@@ -27,13 +26,13 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-        
+
       - name: Install dependency and build
-        run: | 
-         corepack enable
-         pnpm i
-         pnpm build
-        
+        run: |
+          corepack enable
+          pnpm i
+          pnpm build
+
       - name: Push to Cloudbase
         uses: TencentCloudBase/cloudbase-action@v2.0.1
         with:

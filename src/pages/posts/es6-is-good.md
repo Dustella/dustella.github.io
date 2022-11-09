@@ -20,7 +20,7 @@ obj = [2, 3, 4]
 我们使用 for 遍历其中的对象
 
 ```js
-for (var i in obj) console.log(i); // 1,2,3
+for (const i in obj) console.log(i) // 1,2,3
 ```
 
 我们都知道这样会输出 1,2,3，也就是数组前面的下标。
@@ -28,7 +28,7 @@ for (var i in obj) console.log(i); // 1,2,3
 在 ES6 中，我们可以使用 of 进行内容的遍历：
 
 ```js
-for (var i of obj) console.log(i); //2,3,4
+for (const i of obj) console.log(i) // 2,3,4
 ```
 
 这样，of 取到的是数组内的内容而不是下标

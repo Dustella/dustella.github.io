@@ -1,6 +1,6 @@
 ---
-import { SITE_TITLE, SITE_LINKS, SITE_DESCRIPTION } from "../config";
-import "../styles/unreset.scss";
+import { SITE_DESCRIPTION, SITE_LINKS, SITE_TITLE } from '../config'
+import '../styles/unreset.scss';
 ---
 
 <header>
@@ -10,7 +10,7 @@ import "../styles/unreset.scss";
   <h4 class="text-center font-semibold">{SITE_DESCRIPTION}</h4>
   <nav>
     {
-      SITE_LINKS.map((item) => (
+      SITE_LINKS.map(item => (
         <a href={item.link} class="links">
           <img src={item.icon} alt="item.name" width="20" height="20" />
           <p>{item.name}</p>
