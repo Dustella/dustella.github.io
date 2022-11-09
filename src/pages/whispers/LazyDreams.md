@@ -1,7 +1,9 @@
 ---
 title: 夏日的梦
 date: 2022-06-13
+layout: ../../layouts/BlogPost.astro
 updated: 2022-06-13
+
 desciption: 今天我做了一个十年前的梦
 ---
 

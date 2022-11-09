@@ -2,6 +2,7 @@
 
 title: 蝴蝶旅客
 date: 2022-07-17
+layout: ../../layouts/BlogPost.astro
 updated: 2022-07-17
 
 ---
