@@ -1,13 +1,14 @@
 name: Azure Static Web Apps Deploy
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - master
+  # disabled
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   types: [opened, synchronize, reopened, closed]
+  #   branches:
+  #     - master
 
 jobs:
   build_and_deploy_job:
