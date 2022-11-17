@@ -8,10 +8,12 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Cache node modules
         id: cache-npm
@@ -21,17 +23,19 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
 
       - name: Install dependency and build
         run: |
           corepack enable
           pnpm i
           pnpm build
+
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
 
       - name: Push to Cloudbase
         uses: TencentCloudBase/cloudbase-action@v2.0.1
@@ -42,3 +46,15 @@ jobs:
           secretKey: ${{SECRETS.SKEY}}
           # 云开发环境 Id
           envId: ${{SECRETS.ENVID}}
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
