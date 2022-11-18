@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Cache node modules
         id: cache-npm
@@ -72,18 +72,29 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Cloudbase
     steps:
-      - uses: actions/checkout@v2
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: /home/runner/.local/share/pnpm/store
+          key: cloudbase-cli
+          restore-keys: cloudbase-cli
 
+      - uses: actions/checkout@v2
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
           name: dist
 
       - name: Push to Cloudbase
+
         run: |
-          pnpm i @cloudbase/cli
-          pnpm exec tcb  login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
-          pnpm exec tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
+          npm install -g @cloudbase/cli
+          npx tcb login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
+          npx tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
       #   uses: TencentCloudBase/cloudbase-action@v2.0.1
       #   with:
       #     # 云开发 secretId
