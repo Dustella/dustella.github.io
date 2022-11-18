@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build
+    name: Install and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -61,13 +61,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy Github Pages
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 
   deploy-cloudbase:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy Cloudbase
     steps:
       - uses: actions/checkout@v2
 
