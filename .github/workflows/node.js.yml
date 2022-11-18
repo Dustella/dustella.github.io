@@ -94,7 +94,7 @@ jobs:
         run: |
           npm install -g @cloudbase/cli
           npx tcb login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
-          npx tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
+          npx tcb hosting deploy . . -e  ${{SECRETS.ENVID}}
       #   uses: TencentCloudBase/cloudbase-action@v2.0.1
       #   with:
       #     # 云开发 secretId
