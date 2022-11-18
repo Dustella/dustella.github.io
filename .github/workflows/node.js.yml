@@ -80,11 +80,15 @@ jobs:
           name: dist
 
       - name: Push to Cloudbase
-        uses: TencentCloudBase/cloudbase-action@v2.0.1
-        with:
-          # 云开发 secretId
-          secretId: ${{SECRETS.SID}}
-          # 云开发 secretKey
-          secretKey: ${{SECRETS.SKEY}}
-          # 云开发环境 Id
-          envId: ${{SECRETS.ENVID}}
+        run: |
+          pnpm i @cloudbase/cli
+          pnpm exec tcb  login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
+          pnpm exec tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
+      #   uses: TencentCloudBase/cloudbase-action@v2.0.1
+      #   with:
+      #     # 云开发 secretId
+      #     secretId: ${{SECRETS.SID}}
+      #     # 云开发 secretKey
+      #     secretKey: ${{SECRETS.SKEY}}
+      #     # 云开发环境 Id
+      #     envId: ${{SECRETS.ENVID}}
