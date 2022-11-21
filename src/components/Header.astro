@@ -4,10 +4,10 @@ import "../styles/unreset.scss";
 ---
 
 <header class="py-10 flex w-full justify-between backdrop-saturate-10 bg-[#CDCECF]">
-  <h2 class="xl:ml-30 text-left font-bold text-xl">
+  <h2 class="xl:ml-30 ml-10 text-left font-bold text-xl">
     {SITE_TITLE}
   </h2>\
-  <nav class="flex items-center justify-around xl:pr-10">
+  <nav class="sm:flex hidden  items-center justify-around xl:pr-10">
     {
       SITE_LINKS.map((item) => (
         <a href={item.link} class="text-[#191B1D] mx-2 font-100">
