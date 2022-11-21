@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
+date: 2022-08-22
 title: 远程开发、远程游戏漫谈
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 title: 10分钟光速入门TypeScipt
+date: 2022-08-22
 ---
 
 # 10分钟光速入门TypeScipt

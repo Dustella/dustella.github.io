@@ -1,6 +1,7 @@
 ---
 title: 丝滑度升级：ES6 之后的特性
 layout: ../../layouts/BlogPost.astro
+date: 2022-08-22
 ---
 
 # 丝滑度升级：ES6 之后的特性
