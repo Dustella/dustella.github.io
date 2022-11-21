@@ -1,8 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 ---
 
 <!DOCTYPE html>
@@ -12,14 +12,22 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../config';
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main>
-      <h1 class="text-center">🧑‍🚀 Dustella Here</h1>
-      <h4 class="text-center">佛系前端&运维，稍微会点这种魔法</h4>
-      <h4 class="text-center">
-        是 <a href="https://me.penclub.club">lixiang810</a> 的男朋友
+    <main class="xl:pl-30 h-screen flex flex-col">
+      <h1 class="xl:text-left text-gray-9 text-center text-5xl font-bold my-10">
+        糖果店
+      </h1>
+      <h4 class="xl:text-left text-white text-center text-5xl font-bold my-0">
+        没有糖果
       </h4>
-
-      <h4 class="text-center">我会在花室凿一扇天窗，为你接住霓虹与星光。</h4>
+      <div class="h-1/4"></div>
+      <div class="xl:flex justify-between">
+        <h4 class="xl:text-left text-center text-7xl font-bold my-8">🧑‍🚀</h4>
+        <pre
+          class="text-center mr-20 text-xl">
+          喜欢胡思乱想的前端魔法师
+           是 <a href="https://me.penclub.club" class="text-gray-4">lixiang810</a> 的男朋友
+        </pre>
+      </div>
     </main>
     <Footer />
   </body>

@@ -1,39 +1,21 @@
 ---
-import { SITE_DESCRIPTION, SITE_LINKS, SITE_TITLE } from '../config'
-import '../styles/unreset.scss';
+import { SITE_DESCRIPTION, SITE_LINKS, SITE_TITLE } from "../config";
+import "../styles/unreset.scss";
 ---
 
-<header>
-  <h2 class="text-center font-bold">
+<header class="py-10 flex w-full justify-between backdrop-saturate-10 bg-[#CDCECF]">
+  <h2 class="xl:ml-30 text-left font-bold text-xl">
     {SITE_TITLE}
-  </h2>
-  <h4 class="text-center font-semibold">{SITE_DESCRIPTION}</h4>
-  <nav>
+  </h2>\
+  <nav class="flex items-center justify-around xl:pr-10">
     {
-      SITE_LINKS.map(item => (
-        <a href={item.link} class="links">
-          <img src={item.icon} alt="item.name" width="20" height="20" />
+      SITE_LINKS.map((item) => (
+        <a href={item.link} class="text-[#191B1D] mx-2 font-100">
+          <!-- <img src={item.icon} alt="item.name" width="20" height="20" /> -->
           <p>{item.name}</p>
         </a>
       ))
     }
   </nav>
 </header>
-<style>
-  header {
-    margin: 0em 0 2em;
-  }
-  h2 {
-    margin: 0.5em 0;
-  }
-  nav {
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-  }
-  .links {
-    display: flex;
-    color: gray;
-  }
-</style>
+<style></style>
