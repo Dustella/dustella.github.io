@@ -19,7 +19,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
       body {
-        background-color: whitesmoke;
+        background-color: #f5f5f5;
       }
       ul {
         list-style-type: none;
@@ -41,9 +41,9 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
   <body>
     <Header />
     <br />
-    <main>
-      <section class="px-20">
-        <ul>
+    <main class="pt-30">
+      <section class="xl:px-20">
+        <ul class="grid xl:grid-cols-2">
           {
             posts.map((post) => (
               <PostCard

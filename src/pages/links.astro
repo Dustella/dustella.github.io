@@ -1,9 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
-import FriendList from '../components/FriendList.vue';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import FriendList from "../components/FriendList.astro";
 ---
 
 <head>
@@ -11,6 +11,6 @@ import FriendList from '../components/FriendList.vue';
 </head>
 <body>
   <Header title={SITE_TITLE} />
-  <FriendList client:only="vue" />
+  <FriendList />
   <Footer />
 </body>

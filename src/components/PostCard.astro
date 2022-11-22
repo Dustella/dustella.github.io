@@ -8,9 +8,11 @@ export interface Props {
 const { time, title, url } = Astro.props;
 ---
 
-<li class="text-dark bg-whitesmoke m-2 border-1 border-gray-2 p-5 rounded-xl">
+<li
+  class="text-dark bg-whitesmoke m-2 border-1 border-gray-2 p-5 rounded-xl h-40"
+>
   <a href={url} class="text-black">
-    <h1>
+    <h1 class="font-bold">
       {title}
     </h1>
     {time}
