@@ -19,6 +19,15 @@ body {
   color: #191B1D;
 }
 
+* {
+  /* z-index: 1; */
+  /* -webkit-filter: blur(0px);
+  filter: blur(0px);
+  position: relative;
+  overflow: hidden; */
+
+}
+
 h1,
 h2,
 h3,

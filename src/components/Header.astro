@@ -7,7 +7,9 @@ import "../styles/unreset.scss";
   <h2 class="xl:ml-30 ml-10 text-left font-bold text-xl">
     {SITE_TITLE}
   </h2>
-  <nav class="sm:flex hidden  items-center justify-around xl:pr-10">
+  <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+  <label for="drawer-toggle" id="drawer-toggle-label"></label>
+  <nav class="sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around xl:pr-10 transition-all duration-500" id="nav">
     {
       SITE_LINKS.map((item) => (
         <a href={item.link} class="text-[#191B1D] mx-2 font-100">
@@ -18,4 +20,34 @@ import "../styles/unreset.scss";
     }
   </nav>
 </header>
-<style></style>
+<style>
+  #drawer-toggle:checked ~ #nav{
+    margin-top: 0;
+    margin: 80px auto;
+    height: 70vh;
+    background-color: #f0f0f0;
+    z-index: 255;
+  }
+  
+#drawer-toggle-label:before { 
+content: ''; 
+display: block; 
+height: 2px; 
+width: 24px; 
+background: #8d8d8d; 
+box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d; 
+} 
+#drawer-toggle-label { 
+  margin-top: 22px;
+user-select: none; 
+left: 0px; 
+height:20px; 
+width: 50px; 
+display: block; 
+background: rgba(255,255,255,.0); 
+z-index: 1; 
+} 
+#drawer-toggle { 
+opacity: 0; 
+}
+</style>
