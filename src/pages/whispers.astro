@@ -1,14 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import PostCard from "../components/PostCard.astro";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./whispers/*.{md,mdx}')).sort(
+const posts = (await Astro.glob("./whispers/*.{md,mdx}")).sort(
   (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf()
-    - new Date(a.frontmatter.pubDate).valueOf(),
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
@@ -17,6 +18,9 @@ const posts = (await Astro.glob('./whispers/*.{md,mdx}')).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
+      body {
+        background-color: #f5f5f5;
+      }
       ul {
         list-style-type: none;
         padding: unset;
@@ -37,23 +41,15 @@ const posts = (await Astro.glob('./whispers/*.{md,mdx}')).sort(
   <body>
     <Header />
     <main>
-      <section>
-        <ul>
+      <section class="xl:px-20 pt-30">
+        <ul class="grid xl:grid-cols-2">
           {
-            posts.map(post => (
-              <li>
-                <time datetime={post.frontmatter.pubDate}>
-                  {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                    'en-us',
-                    {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    },
-                  )}
-                </time>
-                <a href={post.url}>{post.frontmatter.title}</a>
-              </li>
+            posts.map((post) => (
+              <PostCard
+                time={post.frontmatter.date}
+                title={post.frontmatter.title}
+                url={post.url}
+              />
             ))
           }
         </ul>
