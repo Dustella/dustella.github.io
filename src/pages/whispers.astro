@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import PostCard from "../components/PostCard.astro";
+import { Spa } from "astro-spa";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./whispers/*.{md,mdx}")).sort(
@@ -56,5 +57,6 @@ const posts = (await Astro.glob("./whispers/*.{md,mdx}")).sort(
       </section>
     </main>
     <Footer />
+    <Spa progressBar={false} />
   </body>
 </html>
