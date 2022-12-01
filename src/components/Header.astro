@@ -7,8 +7,8 @@ import "../styles/unreset.scss";
   <h2 class="xl:ml-30 ml-10 text-left font-bold text-xl">
     {SITE_TITLE}
   </h2>
-  <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-  <label for="drawer-toggle" id="drawer-toggle-label"></label>
+  <input type="checkbox" class="sm:hidden" id="drawer-toggle" name="drawer-toggle"/>
+  <label for="drawer-toggle" class="sm:hidden" id="drawer-toggle-label"></label>
   <nav class="sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around xl:pr-10 transition-all duration-500" id="nav">
     {
       SITE_LINKS.map((item) => (
@@ -43,7 +43,6 @@ user-select: none;
 left: 0px; 
 height:20px; 
 width: 50px; 
-display: block; 
 background: rgba(255,255,255,.0); 
 z-index: 1; 
 } 
