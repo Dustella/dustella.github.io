@@ -24,24 +24,16 @@ const {
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 1rem 0;
-      }
-    </style>
   </head>
 
   <body>
     <Header />
     <main class="pt-10">
-      <article class="container xl:max-w-[980px] mx-auto xl:px-20 p-10">
+      <article
+        class="container xl:max-w-[980px] mx-auto xl:px-20 p-10 leading-9"
+      >
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
+        <h1 class="text-[2em]">{title}</h1>
         {pubDate && <time>{pubDate}</time>}
         {
           updatedDate && (
@@ -50,7 +42,7 @@ const {
             </div>
           )
         }
-        <hr />
+        <hr class="bt-1 border-white" />
         <slot />
       </article>
     </main>

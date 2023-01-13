@@ -4,7 +4,7 @@ import FriendCard from "./FriendCard.astro";
 ---
 
 <section
-  class="container mx-auto grid md:grid-cols-3 p-30 gap-10 sm:grid-cols-2 grid-cols-1 pt-30 bg-[#f5f5f5]"
+  class="container xl:max-w-[980px] mx-auto grid md:grid-cols-3 p-30 gap-10 sm:grid-cols-2 grid-cols-1 pt-30 bg-[#f5f5f5]"
 >
   {ls.map((i) => <FriendCard info={i} />)}
 </section>
