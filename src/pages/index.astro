@@ -7,33 +7,37 @@ import { Spa } from "astro-spa";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-[#cdcecf]">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      body {
-        background-color: #cdcecf;
-      }
-    </style>
   </head>
-  <body>
+  <body class="m-0 p-0 h-full bg-[#cdcecf]">
     <Header title={SITE_TITLE} />
-    <main class="xl:pl-30 h-screen flex flex-col pt-30">
-      <h1 class="xl:text-left text-gray-9 text-center text-5xl font-bold my-10">
-        糖果店
-      </h1>
-      <h4 class="xl:text-left text-white text-center text-5xl font-bold my-0">
-        没有糖果
-      </h4>
-      <div class="xl:h-1/4 h-1/6"></div>
-      <div class="xl:flex justify-between">
-        <h4 class="xl:text-left text-center text-7xl font-bold my-8">🧑‍🚀</h4>
-        <h1 class="text-center xl:mr-20 text-xl p-6 leading-loose">
-          喜欢胡思乱想的前端魔法师<br /> 是 <a
-            href="https://me.penclub.club"
-            class="text-gray-4">lixiang810</a
-          > 的男朋友
-        </h1>
+    <main class="h-3/4 pt-20">
+      <div
+        class="h-full relative flex flex-col container justify-around mx-auto"
+      >
+        <section>
+          <h1
+            class="xl:text-left text-gray-9 text-center text-5xl font-bold my-10"
+          >
+            糖果店
+          </h1>
+          <h4
+            class="xl:text-left text-white text-center text-5xl font-bold my-0"
+          >
+            没有糖果
+          </h4>
+        </section>
+        <section class="xl:flex justify-between">
+          <h4 class="xl:text-left text-center text-7xl font-bold my-8">🧑‍🚀</h4>
+          <h1 class="text-center xl:text-right text-xl p-6 leading-loose">
+            喜欢胡思乱想的前端魔法师<br /> 是 <a
+              href="https://me.penclub.club"
+              class="text-gray-4">lixiang810</a
+            > 的男朋友
+          </h1>
+        </section>
       </div>
     </main>
     <Footer />

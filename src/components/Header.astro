@@ -3,22 +3,24 @@ import { SITE_DESCRIPTION, SITE_LINKS, SITE_TITLE } from "../config";
 import "../styles/unreset.scss";
 ---
 
-<header class="py-5 flex w-full justify-between backdrop-blur-sm border-1 fixed">
-  <h2 class="xl:ml-30 ml-10 text-left font-bold text-xl">
-    {SITE_TITLE}
+<header class="relative py-5  w-full  backdrop-blur-sm border-1 fixed ">
+  <div class="container mx-auto flex justify-between">
+    <h2 class="xl:ml-0 ml-10 text-left font-bold text-xl">
+      {SITE_TITLE}
   </h2>
   <input type="checkbox" class="sm:hidden" id="drawer-toggle" name="drawer-toggle"/>
   <label for="drawer-toggle" class="sm:hidden" id="drawer-toggle-label"></label>
-  <nav class="sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around xl:pr-10 transition-all duration-500" id="nav">
+  <nav class="sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around  transition-all duration-500" id="nav">
     {
       SITE_LINKS.map((item) => (
         <a href={item.link} class="text-[#191B1D] mx-2 font-100">
           <!-- <img src={item.icon} alt="item.name" width="20" height="20" /> -->
           <p>{item.name}</p>
-        </a>
-      ))
-    }
+          </a>
+          ))
+        }
   </nav>
+</div>
 </header>
 <style>
   #drawer-toggle:checked ~ #nav{
