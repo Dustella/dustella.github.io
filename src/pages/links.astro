@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import FriendList from "../components/FriendList.astro";
-import { Spa } from "astro-spa";
+import { PageTransition } from "astro-page-transition";
 ---
 
 <head>
@@ -12,7 +12,7 @@ import { Spa } from "astro-spa";
 </head>
 <body>
   <Header title={SITE_TITLE} />
+  <PageTransition speed={200} background="#f5f5f5" zIndex={99} />
   <FriendList />
   <Footer />
-  <Spa progressBar={false} defaultAnimation={false} />
 </body>

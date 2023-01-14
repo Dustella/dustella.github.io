@@ -3,8 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/unreset.scss";
+import { PageTransition } from "astro-page-transition";
 import "../styles/global.css";
-import { Spa } from "astro-spa";
 
 export interface Props {
   content: {
@@ -47,6 +47,5 @@ const {
       </article>
     </main>
     <Footer />
-    <Spa progressBar={false} />
   </body>
 </html>
