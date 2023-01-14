@@ -20,10 +20,12 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
   </head>
   <body class="bg-bgwhite">
     <Header />
-    <PageTransition speed={200} background="#f5f5f5" zIndex={99} />
+    <PageTransition speed={200} background="var(--bg-color)" zIndex={99} />
     <main class="pt-20">
       <section class="container xl:max-w-[980px] mx-auto">
-        <ul class="grid xl:grid-cols-2 list-none">
+        <ul
+          class="list-outside w-full grid xl:grid-cols-2 list-none items-center justify-center justify-self-center self-stretch"
+        >
           {
             posts.map((post) => (
               <PostCard

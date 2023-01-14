@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/unreset.scss";
 import { PageTransition } from "astro-page-transition";
-import "../styles/global.css";
+import "../styles/global.scss";
 
 export interface Props {
   content: {
@@ -28,6 +28,8 @@ const {
 
   <body>
     <Header />
+    <PageTransition speed={200} background="var(--bg-color)" zIndex={99} />
+
     <main class="pt-10">
       <article
         class="container xl:max-w-[980px] mx-auto xl:px-20 p-10 leading-9"

@@ -3,14 +3,14 @@ import { SITE_DESCRIPTION, SITE_LINKS, SITE_TITLE } from "../config";
 import "../styles/unreset.scss";
 ---
 
-<header class="relative py-5 w-full backdrop-blur-sm b-b-1 dark:border-gray-6 fixed z-255">
-  <div class="container mx-auto flex justify-between xl:max-w-[980px]">
-    <h2 class="xl:ml-0 ml-10 text-left font-bold text-xl">
+<header class="blur py-5 w-full backdrop-blur b-b-1 dark:border-gray-6 fixed z-255 sticky top-0">
+  <div class=" container mx-auto flex justify-between xl:max-w-[980px]">
+    <h2 class="z-250 xl:ml-0 ml-10 text-left font-bold text-xl">
       {SITE_TITLE}
   </h2>
-  <input type="checkbox" class="sm:hidden" id="drawer-toggle" name="drawer-toggle"/>
-  <label for="drawer-toggle" class="sm:hidden" id="drawer-toggle-label"></label>
-  <nav class="sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around  transition-all duration-500" id="nav">
+  <input type="checkbox" class="sm:hidden z-250" id="drawer-toggle" name="drawer-toggle"/>
+  <label for="drawer-toggle" class="sm:hidden z-250" id="drawer-toggle-label"></label>
+  <nav class="z-170 sm:flex sm:relative sm:mt-0 mt--130 absolute items-center text-center sm:w-auto w-full justify-around  transition-all duration-500" id="nav">
     {
       SITE_LINKS.map((item) => (
         <a href={item.link} class="text-[#191B1D] dark:text-[#abb2bf] mx-2 font-100">
@@ -23,15 +23,23 @@ import "../styles/unreset.scss";
 </div>
 </header>
 <style>
+
+  .blur{
+    backdrop-filter: blur(4px);
+  }
+  #drawer-toggle::before:checked{
+    transform: rotate(45deg);
+  }
   #drawer-toggle:checked ~ #nav{
     margin-top: 0;
     margin: 80px auto;
     height: 70vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    /* backdrop-filter: blur(4px); */
     z-index: 255;
   }
   
-#drawer-toggle-label:before { 
+#drawer-toggle-label::before { 
 content: ''; 
 display: block; 
 height: 2px; 
