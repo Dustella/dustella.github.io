@@ -2,28 +2,33 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 import { Spa } from "astro-spa";
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-[#cdcecf]">
+<html lang="en" class="h-full bg-bggray_l dark:bg-[#282c34]">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="m-0 p-0 h-full bg-[#cdcecf]">
+  <body class="m-0 p-0 h-full bg-bggray_l dark:bg-[#282c34]">
     <Header title={SITE_TITLE} />
     <main class="h-3/4 pt-20">
       <div
         class="h-full relative flex flex-col xl:max-w-[980px] container justify-center mx-auto"
       >
-        <h1 class="text-gray-9 text-center text-5xl font-bold my-10">糖果店</h1>
+        <h1
+          class="text-gray-9 dark:text-gray-2 text-center text-5xl font-bold my-10"
+        >
+          糖果店
+        </h1>
         <h4 class="text-white text-center text-5xl font-bold my-0">没有糖果</h4>
         <div class="h-1/4"></div>
         <h4 class="text-center text-7xl font-bold my-8">🧑‍🚀</h4>
       </div>
     </main>
     <Footer />
-    <Spa progressBar={false} />
+    <Spa progressBar={false} defaultAnimation={false} />
   </body>
 </html>

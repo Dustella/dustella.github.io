@@ -7,6 +7,7 @@ specifiers:
   '@astrojs/sitemap': ^1.0.0
   '@typescript-eslint/parser': ^5.48.1
   '@unocss/astro': ^0.48.4
+  '@unocss/preset-mini': ^0.48.4
   '@unocss/reset': ^0.48.4
   astro: ^1.9.2
   astro-spa: ^1.3.9
@@ -36,6 +37,7 @@ dependencies:
 
 devDependencies:
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
+  '@unocss/preset-mini': 0.48.4
   eslint-plugin-astro: 0.21.1_eslint@8.31.0
 
 packages:
@@ -1261,7 +1263,6 @@ packages:
 
   /@unocss/core/0.48.4:
     resolution: {integrity: sha512-ecoTzblwEIQGD4QhMo1U36rVwvTR9XW+gtJRhCnVyjy7L23AbGJu2xkRZSsH3k/v0gs0gx/SHNfyOqA52BNfoA==}
-    dev: false
 
   /@unocss/inspector/0.48.4:
     resolution: {integrity: sha512-YcPJoMUbOhldMxMLg9bGNMgReNIcYmIomI2NY77aiPcihv47LLPlN/ur3/syz5SxxihRgIIdFXmGhpj6HDa9vg==}
@@ -1290,7 +1291,6 @@ packages:
     resolution: {integrity: sha512-UNiBZ7rDP0ubXRu0r6WWy/2Fn70+xur0e/7cR4rMjyboQtMCKxYU6H6svZcraoX2ie1rjAIuZmMbSLooTVoovg==}
     dependencies:
       '@unocss/core': 0.48.4
-    dev: false
 
   /@unocss/preset-tagify/0.48.4:
     resolution: {integrity: sha512-M8Vr7JbDAXb/c83oCnIOlSEuCWSujiia7Fp5kgmKrXp25Bqb7rd9d6sD0uLcHsknc9hUkkBFGyPfuMmRo1VovA==}

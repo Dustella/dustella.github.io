@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.48.1",
+    "@unocss/preset-mini": "^0.48.4",
     "eslint-plugin-astro": "^0.21.1"
   }
 }

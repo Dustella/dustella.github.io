@@ -22,8 +22,8 @@ const posts = (await Astro.glob("./whispers/*.{md,mdx}")).sort(
   <body>
     <Header />
     <main>
-      <section class="xl:px-20 pt-30">
-        <ul class="grid xl:grid-cols-2">
+      <section class="container xl:max-w-[980px] mx-auto">
+        <ul class="grid xl:grid-cols-2 list-none">
           {
             posts.map((post) => (
               <PostCard

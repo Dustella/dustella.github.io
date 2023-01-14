@@ -9,12 +9,12 @@ const { time, title, url } = Astro.props;
 ---
 
 <li
-  class="text-dark bg-whitesmoke m-2 border-1 border-gray-2 p-5 rounded-xl h-40"
+  class="text-dark bg-whitesmoke m-2 border-1 dark:border-gray-6 border-gray-2 p-5 rounded-xl h-40 list-none"
 >
-  <a href={url} class="text-black">
+  <a href={url} class="text-black dark:text-[#abb2bf]">
     <h1 class="font-bold">
       {title}
     </h1>
-    {time}
+    {new Date(time).toLocaleDateString()}
   </a>
 </li>

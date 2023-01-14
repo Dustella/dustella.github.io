@@ -17,6 +17,24 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: #191B1D;
+  transition: all 0.5s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #282c34;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    text-align: left;
+    background-color: #282c34;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #abb2bf;
+  }
 }
 
 * {

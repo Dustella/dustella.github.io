@@ -19,7 +19,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="bg-[#f5f5f5]">
+  <body class="bg-bgwhite">
     <Header />
     <main class="pt-30">
       <section class="container xl:max-w-[980px] mx-auto">
@@ -37,6 +37,6 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
       </section>
     </main>
     <Footer />
-    <Spa progressBar={false} />
+    <Spa progressBar={false} defaultAnimation={false} />
   </body>
 </html>
