@@ -1,23 +1,16 @@
-import { url } from 'inspector'
-
-export const scrollLock = false
-
 const updateLink = (headingId) => {
   const tocSide = document.getElementById('toc')
   const tocLinks = tocSide.querySelectorAll('a')
   tocLinks.forEach((link) => {
-    if (link.hash === `#${encodeURIComponent(`${headingId}`)}`) {
-      console.log('match', link.hash, `#${encodeURIComponent(`${headingId}`)}`)
+    if (link.hash === `#${encodeURIComponent(`${headingId}`)}`)
       link.firstElementChild.classList.add('active-here')
-    }
-
-    else { link.firstElementChild.classList.remove('active-here') }
+    else link.firstElementChild.classList.remove('active-here')
   })
 }
 
 export const getCurrentHeading = () => {
   const article = document.querySelector('article')
-  const allHeadings = article.querySelectorAll('h1,  h2, h3 ')
+  const allHeadings = article.querySelectorAll('h1,  h2,  h3')
   const allHeadingsHeight = Array.from(allHeadings.values()).map(
     (heading) => {
       const { top } = heading.getBoundingClientRect()
@@ -35,7 +28,6 @@ export const getCurrentHeading = () => {
 
   if (scrollLock && lastHeading.id === location.hash.slice(1))
     return null
-  //   location.hash = lastHeading.id
 
   return lastHeading
 }

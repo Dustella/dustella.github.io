@@ -6,7 +6,6 @@ import AsideToc from "../components/AsideToc.astro";
 import "../styles/unreset.scss";
 import { PageTransition } from "astro-page-transition";
 import "../styles/global.scss";
-import { getFirstParagraph, parseMdToTitles } from "../utils/mdparser";
 
 export interface Props {
   content: {
@@ -20,7 +19,6 @@ export interface Props {
 
 const {
   content: { title, description, date, updatedDate, heroImage },
-  rawContent,
   headings,
 } = Astro.props;
 ---
@@ -34,7 +32,7 @@ const {
     <PageTransition speed={200} background="var(--bg-color)" zIndex={99} />
     <Header />
     <script>
-      import { getCurrentHeading, scrollLock } from "../utils/scroller";
+      import { getCurrentHeading } from "../utils/scroller";
       function debounce(fun, delay) {
         return function () {
           let that = this;
@@ -45,10 +43,7 @@ const {
         };
       }
       const debouncedGetCurrentHeading = debounce(getCurrentHeading, 10);
-      addEventListener("scroll", () => {
-        if (scrollLock) return;
-        const heading = debouncedGetCurrentHeading();
-      });
+      addEventListener("scroll", () => debouncedGetCurrentHeading());
     </script>
     <div class="pt-0 flex flex-row-reverse relative justify-center gap-12">
       <AsideToc list={headings} />
