@@ -23,8 +23,7 @@ html {
 }
 
 .active-here{
-  color:#282c34!important;
-  background-color: #abb2bf!important;
+  transform: translateX(-2rem);
 }
 
 body {
@@ -74,6 +73,8 @@ h6,
 strong,
 b {
   color: var(--text-color);
+  transition: all 0.5s ease;
+
 }
 :target{
   scroll-margin-top:99px;
