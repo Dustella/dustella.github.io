@@ -26,7 +26,7 @@ export const getCurrentHeading = () => {
   if (!lastHeading)
     return null
 
-  if (scrollLock && lastHeading.id === location.hash.slice(1))
+  if (lastHeading.id === location.hash.slice(1))
     return null
 
   return lastHeading
