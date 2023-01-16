@@ -1,0 +1,23 @@
+---
+const { list } = Astro.props;
+const toRender = list.map((line) => {
+  line.level = "h" + (line.depth + 2);
+  return line;
+});
+---
+
+<aside id="toc" class="sticky top-30 max-h-90 xl:block hidden">
+  <ul>
+    {
+      toRender.map((line) => (
+        <li class="">
+          <a href={`#${line.slug}`} class=" leading-2">
+            <line.level class="whitespace-pre leading-0 p-3 h-2">
+              {`${"".repeat(line.depth + 1)}${line.text}`}
+            </line.level>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>

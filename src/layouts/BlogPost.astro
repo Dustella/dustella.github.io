@@ -2,22 +2,26 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import AsideToc from "../components/AsideToc.astro";
 import "../styles/unreset.scss";
 import { PageTransition } from "astro-page-transition";
 import "../styles/global.scss";
+import { getFirstParagraph, parseMdToTitles } from "../utils/mdparser";
 
 export interface Props {
   content: {
     title: string;
     description: string;
-    pubDate?: string;
+    date?: string;
     updatedDate?: string;
     heroImage?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, date, updatedDate, heroImage },
+  rawContent,
+  headings,
 } = Astro.props;
 ---
 
@@ -27,27 +31,47 @@ const {
   </head>
 
   <body>
-    <Header />
     <PageTransition speed={200} background="var(--bg-color)" zIndex={99} />
-
-    <main class="pt-10">
-      <article
-        class="container xl:max-w-[980px] mx-auto xl:px-20 p-10 leading-9"
-      >
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="text-[2em]">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
-            </div>
-          )
-        }
-        <hr class="bt-1 border-white" />
-        <slot />
-      </article>
-    </main>
+    <Header />
+    <script>
+      import { getCurrentHeading, scrollLock } from "../utils/scroller";
+      function debounce(fun, delay) {
+        return function () {
+          let that = this;
+          clearTimeout(fun.id);
+          fun.id = setTimeout(function () {
+            fun.call(that);
+          }, delay);
+        };
+      }
+      const debouncedGetCurrentHeading = debounce(getCurrentHeading, 10);
+      addEventListener("scroll", () => {
+        if (scrollLock) return;
+        const heading = debouncedGetCurrentHeading();
+      });
+    </script>
+    <div class="pt-0 flex flex-row-reverse relative justify-center gap-12">
+      <AsideToc list={headings} />
+      <main>
+        <article
+          class="pt-0 container xl:max-w-[980px] mx-auto xl:px-20 p-10 leading-9"
+        >
+          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+          <h1 class="text-[2em]">{title}</h1>
+          {date && <time>{new Date(date).toLocaleString()}</time>}
+          {
+            updatedDate && (
+              <div>
+                Last updated on <time>{updatedDate}</time>
+              </div>
+            )
+          }
+          <hr class="bt-1 border-white" />
+          <slot />
+          <p id="test1">aaa</p>
+        </article>
+      </main>
+    </div>
     <Footer />
   </body>
 </html>

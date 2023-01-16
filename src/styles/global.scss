@@ -19,6 +19,12 @@
 
 html {
   background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+.active-here{
+  color:#282c34!important;
+  background-color: #abb2bf!important;
 }
 
 body {
@@ -58,13 +64,6 @@ body {
   }
 }
 
-* {
-  /* z-index: 1; */
-  /* -webkit-filter: blur(0px);
-  filter: blur(0px);
-  position: relative;
-  overflow: hidden; */
-}
 
 h1,
 h2,
@@ -76,9 +75,15 @@ strong,
 b {
   color: var(--text-color);
 }
-
+:target{
+  scroll-margin-top:99px;
+}
 a {
   color: #3273dc;
+}
+
+.active {
+  background-color: #999;
 }
 
 nav a {
