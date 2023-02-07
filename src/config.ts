@@ -11,9 +11,8 @@ export const SITE_LINKS = [
     icon: '/icons/home-fill.svg',
   },
   {
-    name: 'GitHub',
-    link: 'https://github.com/Dustella',
-    icon: '/icons/github.svg',
+    name: 'Works',
+    link: '/works',
   },
   {
     name: 'Posts',
@@ -27,8 +26,8 @@ export const SITE_LINKS = [
   },
   { name: 'Links', link: '/links', icon: '/icons/friends.svg' },
   {
-    name: 'Telegram',
-    link: 'https://t.me/Dustella',
+    name: 'About',
+    link: '/about',
     icon: '/icons/telegram.svg',
   },
 ]

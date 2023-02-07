@@ -1,0 +1,21 @@
+---
+import { PageTransition } from "astro-page-transition";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.scss";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-bggray_l dark:bg-[#282c34]">
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <body class="m-0 p-0 h-full bg-bggray_l dark:bg-[#282c34]">
+    <Header />
+    <PageTransition speed={200} background="var(--bg-color)" zIndex={99} />
+    <main class="h-3/4 pt-20 container mx-auto">
+      <h2>嘿，这里是Dustella</h2>
+    </main>
+    <Footer />
+  </body>
+</html>
