@@ -17,3 +17,6 @@ __unconfig*
 
 # macOS-specific files
 .DS_Store
+
+# test stuff
+test
