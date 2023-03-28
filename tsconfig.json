@@ -1,6 +1,15 @@
 {
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "jsx": "preserve"
-  }
+    "allowJs": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "strict": true,
+    "rootDir": "./",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": ["env.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"]
 }
