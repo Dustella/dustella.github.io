@@ -14,7 +14,7 @@ const members = [
     name: '北雁云依',
     links: [{
       icon: 'github',
-      link: 'https://beiyanyunyi.github.io/',
+      link: 'https://me.penclub.club/',
     }],
     avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
     desc: '嘿嘿，这是我家某位',
