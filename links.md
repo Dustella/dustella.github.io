@@ -37,4 +37,9 @@ const members = [
       :members="members"
     />
   </ClientOnly>
+  <noscript>
+    <VPTeamMembers
+      :members="members"
+    />
+  </noscript>
 </VPTeamPage>
