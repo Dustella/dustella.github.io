@@ -11,5 +11,11 @@
     "esModuleInterop": true,
     "types": ["node"]
   },
-  "include": ["env.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"]
+  "include": [
+    "env.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "friends.ts"
+  ]
 }

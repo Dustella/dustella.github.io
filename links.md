@@ -8,31 +8,18 @@ import {
   VPTeamPageTitle,
   VPTeamMembers
 } from 'vitepress/theme'
-
+import friends from './friends'
 const members = [
     {
-    "name": "特菈",
-    "links": [
-      {
-        "icon": "github",
-        "link": "https://github.com/Dustella"
-      }
-    ],
-    "avatar": "https://github.com/dustella.png",
-    "title": "是另外一位的老公"
+    name: '北雁云依',
+    links: [{
+      icon: 'github',
+      link: 'https://beiyanyunyi.github.io/',
+    }],
+    avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
+    desc: '嘿嘿，这是我家某位',
   },
-
-  {
-    "name": "北雁云依",
-    "links": [
-      {
-        "icon": "github",
-        "link": "https://github.com/Beiyanyunyi"
-      }
-    ],
-    "avatar": "https://github.com/beiyanyunyi.png",
-    "title": "是另外一位的老婆"
-  }
+  ...friends.sort(()=>Math.random()-0.5)
 ]
 </script>
 
@@ -45,7 +32,9 @@ const members = [
       咕噜咕噜
     </template>
   </VPTeamPageTitle>
-  <VPTeamMembers
-    :members="members"
-  />
+  <ClientOnly>
+    <VPTeamMembers
+      :members="members"
+    />
+  </ClientOnly>
 </VPTeamPage>
