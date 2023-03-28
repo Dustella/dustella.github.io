@@ -26,10 +26,10 @@ const members = [
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>
-      Team
+      朋友们
     </template>
     <template #lead>
-      咕噜咕噜
+      欢迎扩列
     </template>
   </VPTeamPageTitle>
   <ClientOnly>
