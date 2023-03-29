@@ -2,7 +2,7 @@
 import Giscus from '@giscus/vue'
 import { useData } from 'vitepress'
 
-const { frontmatter } = useData()
+const { frontmatter, isDark } = useData()
 </script>
 
 <template>
@@ -33,7 +33,7 @@ const { frontmatter } = useData()
       reactions-enabled="1"
       emit-metadata="0"
       input-position="top"
-      theme="preferred_color_scheme"
+      :theme="isDark ? 'dark' : 'light'"
       lang="en"
       loading="lazy"
     >
