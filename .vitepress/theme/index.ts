@@ -2,6 +2,7 @@
 import { h } from 'vue'
 import Theme from 'vitepress/theme'
 import NotFound from './components/NotFound.vue'
+import Comments from './components/Comments.vue'
 import './style.css'
 import 'uno.css'
 
@@ -10,6 +11,7 @@ export default {
   Layout: () => {
     return h(Theme.Layout, null, {
       'not-found': () => h(NotFound),
+      'doc-after': () => h(Comments),
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
