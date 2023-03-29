@@ -8,19 +8,34 @@ import {
   VPTeamPageTitle,
   VPTeamMembers
 } from 'vitepress/theme'
-import friends from './friends'
+import { h } from 'vue'
+
+import friends, { webIcon } from './friends'
+
 const members = [
     {
     name: '北雁云依',
-    links: [{
-      icon: 'github',
+    links: [
+      {
+        icon: "github",
+        link: "https://github.com/beiyanyunyi"
+      },{
+      icon: webIcon,
       link: 'https://me.penclub.club/',
+    },{
+      icon: "twitter",
+      link:"https://twitter.com/t12345tt"
     }],
     avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
     desc: '嘿嘿，这是我家某位',
   },
-  ...friends.sort(()=>Math.random()-0.5)
+  ...friends.sort(()=> Math.random() - 0.5 )
 ]
+
+const noScriptRender = { setup() { 
+  return h("noscript",[ h(VPTeamMembers, { members }) ])
+  } 
+}
 </script>
 
 <VPTeamPage>
@@ -32,14 +47,10 @@ const members = [
       欢迎扩列
     </template>
   </VPTeamPageTitle>
+
   <ClientOnly>
     <VPTeamMembers
       :members="members"
     />
   </ClientOnly>
-  <noscript>
-    <VPTeamMembers
-      :members="members"
-    />
-  </noscript>
 </VPTeamPage>
