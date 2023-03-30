@@ -7,16 +7,16 @@ nocomment: true
 <script setup>
 import { onMounted, ref } from 'vue'
 
-const referer = ref("")
+const isFromBeiyanyunyi = ref(false)
 onMounted(()=>{
-    referer.value = document.referer
-    console.log(referer.value)
+    const { referrer } = document
+    isFromBeiyanyunyi.value = referrer.search("penclub.club") !==0 ||  referrer.search("beiyanyunyi.github.io") !==0
 })
 </script>
 
 # Dustella Here
 
-{{ "referer: " + referer }}
+{{ "isFromBeiyanyunyi: " + isFromBeiyanyunyi }}
 
 一个普通的前端开发、一个诗人、曾经是理想主义者。
 
