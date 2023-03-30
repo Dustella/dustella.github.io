@@ -4,7 +4,19 @@ layout: doc
 nocomment: true
 ---
 
+<script setup>
+import { onMounted, ref } from 'vue'
+
+const referer = ref("")
+onMounted(()=>{
+    referer.value = document.referer
+    console.log(referer.value)
+})
+</script>
+
 # Dustella Here
+
+{{ "referer: " + referer }}
 
 一个普通的前端开发、一个诗人、曾经是理想主义者。
 
