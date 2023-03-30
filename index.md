@@ -10,7 +10,7 @@ import { onMounted, ref } from 'vue'
 const isFromBeiyanyunyi = ref(false)
 onMounted(()=>{
     const { referrer } = document
-    isFromBeiyanyunyi.value = referrer.search("penclub.club") !==0 ||  referrer.search("beiyanyunyi.github.io") !==0
+    isFromBeiyanyunyi.value = referrer.search("penclub.club") !== -1 ||  referrer.search("beiyanyunyi.github.io") !== -1
 })
 </script>
 
