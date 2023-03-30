@@ -14,9 +14,9 @@ onMounted(()=>{
 })
 </script>
 
-# Dustella Here
+# {{ isFromBeiyanyunyi ? "北雁云依的伴侣 Dustella": "Dustella Here"}}
 
-{{ "isFromBeiyanyunyi: " + isFromBeiyanyunyi }}
+{{ isFromBeiyanyunyi ? "咕噜咕噜，这里是北雁云依的男朋友呢，看来你是从她的站点来的哦" : ""   }}
 
 一个普通的前端开发、一个诗人、曾经是理想主义者。
 
