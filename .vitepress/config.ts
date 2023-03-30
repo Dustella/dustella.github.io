@@ -1,5 +1,9 @@
+import { resolve } from 'node:path'
+import { createWriteStream } from 'node:fs'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
+import { SitemapStream } from 'sitemap'
+const links = []
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -34,5 +38,18 @@ export default defineConfig({
   vite: {
     plugins: [Unocss()],
   },
-
+  transformHtml: (_, id, { pageData: { relativePath, frontmatter: { date: lastmod } } }) => {
+    if (!/[\\/]404\.html$/.test(id)) {
+      const iUrl = relativePath.replace(/((^|\/)index)?\.md$/, '$2')
+      const url = (iUrl === '' || iUrl.endsWith('/')) ? iUrl : `${iUrl}.html`
+      links.push({ url, lastmod })
+    }
+  },
+  buildEnd: ({ outDir }) => {
+    const sitemap = new SitemapStream({ hostname: 'https://www.dustella.net/' })
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+    sitemap.pipe(writeStream)
+    links.forEach(link => sitemap.write(link))
+    sitemap.end()
+  },
 })
