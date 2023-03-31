@@ -1,7 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import Theme from 'vitepress/theme'
-import NProgress from 'nprogress'
 import NotFound from './components/NotFound.vue'
 import Comments from './components/Comments.vue'
 import './style.css'
@@ -17,14 +16,18 @@ export default {
     })
   },
   // eslint-disable-next-line unused-imports/no-unused-vars
-  enhanceApp({ app, router, siteData }) {
-    router.onBeforeRouteChange = () => {
-      console.log('routestart')
-      NProgress.start()
-    }
-    router.onAfterRouteChanged = () => {
-      console.log('routeenbd')
-      NProgress.done()
+  async enhanceApp({ app, router, siteData }) {
+    // @ts-expect-error import for vite
+    if (!import.meta.env.SSR) {
+      const { default: NProgress } = await import('nprogress')
+      router.onBeforeRouteChange = () => {
+        console.log('routestart')
+        NProgress.start()
+      }
+      router.onAfterRouteChanged = () => {
+        console.log('routeenbd')
+        NProgress.done()
+      }
     }
 
     // ...

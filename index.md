@@ -2,6 +2,7 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: doc
 nocomment: true
+title: ""
 ---
 
 <script setup>
