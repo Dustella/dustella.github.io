@@ -147,6 +147,6 @@ https://www.eclipse.org/che/?ref=stackshare 也是只能自托管
 
 之后，你应该参考[这篇文章](https://help.dreamhost.com/hc/en-us/articles/216499537-How-to-configure-passwordless-login-in-Mac-OS-X-and-Linux)，它会指导你如何配置公钥私钥登录
 
-## 3.3 客户端 - VSCode 和 Remote 插件
+### 3.3 客户端 - VSCode 和 Remote 插件
 
 首先我们应当测试一下客户端能够正常用 ssh 控制服务端，也应该测试一下 sftp 的情况。

@@ -5,6 +5,7 @@ import NotFound from './components/NotFound.vue'
 import Comments from './components/Comments.vue'
 import './style.css'
 import 'uno.css'
+import VPMobNav from './components/VPMobNav.vue'
 
 export default {
   ...Theme,
@@ -12,6 +13,7 @@ export default {
     return h(Theme.Layout, null, {
       'not-found': () => h(NotFound),
       'doc-after': () => h(Comments),
+      'nav-content-after': () => h(VPMobNav),
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
@@ -21,11 +23,9 @@ export default {
     if (!import.meta.env.SSR) {
       const { default: NProgress } = await import('nprogress')
       router.onBeforeRouteChange = () => {
-        console.log('routestart')
         NProgress.start()
       }
       router.onAfterRouteChanged = () => {
-        console.log('routeenbd')
         NProgress.done()
       }
     }

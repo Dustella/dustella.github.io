@@ -15,11 +15,11 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Blogs', link: '/blogs/' },
       { text: 'Projects', link: '/projects' },
-      { text: 'links', link: '/links' },
+      { text: 'Links', link: '/links' },
       { text: 'About', link: '/about' },
     ],
     footer: {
-      message: '',
+      message: '苏ICP',
       copyright: 'By Dustella, Under CC BY-NC-SA 4.0 License',
     },
     socialLinks: [
@@ -38,6 +38,17 @@ export default defineConfig({
   vite: {
     plugins: [Unocss()],
   },
+  head: [
+    ['link', { rel: 'icon', href: 'https://img-cdn.dustella.net/wizard.ico' }],
+    // meta
+    ['meta', { name: 'author', content: 'Dustella' }],
+    ['meta', { name: 'keywords', content: 'Dustella, Dustella\'s Blog, Dustella\'s Website, Dustella\'s Home' }],
+    // meta for seo
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'googlebot', content: 'index, follow' }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-kpKmYXHSMC' }],
+
+  ],
   transformHtml: (_, id, { pageData: { relativePath, frontmatter: { date: lastmod } } }) => {
     if (!/[\\/]404\.html$/.test(id)) {
       const iUrl = relativePath.replace(/((^|\/)index)?\.md$/, '$2')
