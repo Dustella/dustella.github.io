@@ -19,7 +19,7 @@ export default defineConfig({
       { text: 'About', link: '/about' },
     ],
     footer: {
-      message: '苏ICP',
+      message: '苏ICP备20013766号-2',
       copyright: 'By Dustella, Under CC BY-NC-SA 4.0 License',
     },
     socialLinks: [
