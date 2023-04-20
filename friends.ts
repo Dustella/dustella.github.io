@@ -109,6 +109,21 @@ const friends: DefaultTheme.TeamMember[] = [
     avatar: 'https://images.drshw.tech/images/notes/%E6%A0%87%E5%87%86%E5%A4%B4%E5%83%8F.jpg',
     desc: '特立独行的炼金术士',
   },
+  {
+    name: 'Vincent文朔',
+    links: [
+      {
+        icon: webIcon,
+        link: 'https://blog.vincent1230.top/',
+      },
+      {
+        icon: 'twitter',
+        link: 'https://twitter.com/Vincent20011230',
+      },
+    ],
+    avatar: 'https://a.vincent1230.top/blogrol/avatar.jpg',
+    desc: '太阳出来了 雾就会散的',
+  },
 ]
 
 export default friends
