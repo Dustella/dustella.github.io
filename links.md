@@ -25,7 +25,7 @@ const members = [
       link: 'https://me.penclub.club/',
     },{
       icon: "twitter",
-      link:"https://twitter.com/t12345tt"
+      link:"https://twitter.com/Beiyan_Yunyi"
     }],
     avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
     desc: '嘿嘿，这是我家某位',
