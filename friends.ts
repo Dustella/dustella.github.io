@@ -42,9 +42,12 @@ const friends: DefaultTheme.TeamMember[] = [
     links: [{
       icon: bloggerIcon,
       link: 'https://jurt4201.blogspot.com/',
+    }, {
+      icon: webIcon,
+      link: 'https://jurt4201.work/#/md-src/index.md?lang=en;'
     }],
     avatar: 'https://1.bp.blogspot.com/-ndfZdj0X-Ss/YQoyZQiHtQI/AAAAAAAAALs/JQvRfGtjEq8T0ztPK_A8fRmiAM3ZGOwPQCK4BGAYYCw/s113/unnamed.jpg',
-    desc: 'Julian膜大佬',
+    desc: 'Julian正在膜大佬 / FOSS lover',
   },
   {
     name: 'Shadow',
