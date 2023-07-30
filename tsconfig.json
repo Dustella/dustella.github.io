@@ -16,6 +16,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts",
-    "friends.ts"
+    "friends.ts",
+    ".vitepress/theme/**/*.vue"
   ]
 }

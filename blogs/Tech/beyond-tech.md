@@ -3,9 +3,7 @@ title: 技术之外的闲聊
 date: 2023-07-15 00:00:00
 ---
 
-# 技术之外的闲聊
-
-## CS 学生缺失的东西
+# CS 学生缺失的东西
 
 > 本篇文章是对 hanssen 的 [Pursuit_of_an_Apprentice_zh-Hans.md (handsome0hell.com)](https://blog.handsome0hell.com/articles/Pursuit_of_an_Apprentice_zh-Hans.md.html) 的致敬。当然，本文是闲聊，受众也不只是计算机学徒。
 
