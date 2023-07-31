@@ -119,6 +119,11 @@ h4 {
 }
 
 
+::selection {
+  color: white;
+  background: gray;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
