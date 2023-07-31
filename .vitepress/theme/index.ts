@@ -4,6 +4,7 @@ import Theme from 'vitepress/theme'
 import ArticleList from './components/ArticleList.vue'
 import Comments from './components/Comments.vue'
 import NewNotFound from './components/NewNotFound.vue'
+import BackLast from "./components/BackLast.vue"
 import './style.css'
 import 'uno.css'
 
@@ -13,6 +14,7 @@ export default {
     return h(Theme.Layout, null, {
       'not-found': () => h(NewNotFound),
       'doc-after': () => h(Comments),
+      'doc-before':() => h(BackLast),
 
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
