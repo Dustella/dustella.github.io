@@ -1,16 +1,16 @@
 <script setup>
-import { useRoute } from "vitepress";
+import { useRoute } from 'vitepress'
 
 //   location.pathname !== "/blogs" && location.pathname !== "/blogs/";
 // this should be made reactive
 const shouldRender = () => {
-  const route = useRoute();
-  return route.path !== "/blogs" && route.path !== "/blogs/";
-};
+  const route = useRoute()
+  return route.path !== '/blogs' && route.path !== '/blogs/'
+}
 
 const backLast = () => {
-  window.history.back();
-};
+  window.history.back()
+}
 </script>
 
 <template>
