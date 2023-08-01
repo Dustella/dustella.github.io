@@ -26,14 +26,6 @@ const direction = ref(false)
 const animateName = computed(() => direction.value ? 'toleft' : 'toright')
 
 watch(currentPage, (oldValue, newValue) => {
-  if (newValue > totalPages.value) {
-    currentPage.value = totalPages.value
-    return
-  }
-  else if (newValue < 1) {
-    currentPage.value = 1
-    return
-  }
   activeList.value = !activeList.value
 
   if (activeList.value)
