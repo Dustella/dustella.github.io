@@ -47,6 +47,8 @@ export default defineConfig({
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'googlebot', content: 'index, follow' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-kpKmYXHSMC' }],
+    ['link', { rel: 'stylesheet', href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Medium/result-uni.css' }],
+    ['link', { rel: 'stylesheet', href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Regular/result.css' }],
 
   ],
   transformHtml: (_, id, { pageData: { relativePath, frontmatter: { date: lastmod } } }) => {

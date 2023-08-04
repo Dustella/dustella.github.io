@@ -17,7 +17,7 @@ const backLast = () => {
   <div class="container mx-auto my-5">
     <a
       v-if="shouldRender()"
-      class="text-sm underline py-10 text-gray-500 tracking-[0.05rem]"
+      class="text-sm underline py-10 text-gray-500 tracking-[0.05rem] cursor-pointer"
       @click="backLast"
     >
       返回上一级
