@@ -67,7 +67,7 @@ export default defineConfig({
         ['meta', { property: 'og:type', content: 'blog' }],
         ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
         ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
-        ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }],
+        ['meta', { property: 'twitter:image:src', content: `https://www.dustella.net/og-${title}.png` }],
       ]
     }
     else {
@@ -76,7 +76,7 @@ export default defineConfig({
         ['meta', { property: 'og:type', content: 'blog' }],
         ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
         ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
-        ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
+        ['meta', { property: 'twitter:image:src', content: 'https://www.dustella.net/og.png' }],
       ]
     }
   },
