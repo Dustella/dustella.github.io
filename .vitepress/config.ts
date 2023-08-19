@@ -63,12 +63,18 @@ export default defineConfig({
     const title = context.pageData.frontmatter.title
     if (context.page.includes('blogs')) {
       return [
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:type', content: 'blog' }],
+        ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
         ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
         ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }],
       ]
     }
     else {
       return [
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:type', content: 'blog' }],
+        ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
         ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
         ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
       ]
