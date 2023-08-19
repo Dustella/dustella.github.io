@@ -72,21 +72,19 @@ export default defineConfig({
       ['meta', { property: 'twitter:site', content: '@Dustella' }],
       ['meta', { property: 'twitter:title', content: title }],
       ['meta', { property: 'twitter:description', content: 'Dustella 的主页' }],
-
     ]
     if (context.page.includes('blogs')) {
-      metas.concat([
+      return metas.concat([
         ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
         ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }]],
       )
     }
     else {
-      metas.concat([
+      return metas.concat([
         ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
         ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
       ])
     }
-    return metas
   },
   buildEnd: async ({ outDir }) => {
     const fs = await import('node:fs')
