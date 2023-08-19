@@ -86,6 +86,7 @@ export default defineConfig({
         ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
       ])
     }
+    return metas
   },
   buildEnd: async ({ outDir }) => {
     const fs = await import('node:fs')
