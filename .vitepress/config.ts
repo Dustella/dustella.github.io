@@ -3,6 +3,7 @@ import { createWriteStream } from 'node:fs'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
 import { SitemapStream } from 'sitemap'
+import generator from './theme/utils/ogGenerator'
 const links = []
 
 // https://vitepress.dev/reference/site-config
@@ -51,18 +52,45 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Regular/result.css' }],
 
   ],
-  transformHtml: (_, id, { pageData: { relativePath, frontmatter: { date: lastmod } } }) => {
+  transformHtml: (_, id, { pageData: { relativePath, frontmatter: { date: lastmod, title } } }) => {
     if (!/[\\/]404\.html$/.test(id)) {
       const iUrl = relativePath.replace(/((^|\/)index)?\.md$/, '$2')
       const url = (iUrl === '' || iUrl.endsWith('/')) ? iUrl : `${iUrl}.html`
-      links.push({ url, lastmod })
+      links.push({ url, lastmod, title })
     }
   },
-  buildEnd: ({ outDir }) => {
+  transformHead: async (context) => {
+    const title = context.pageData.frontmatter.title
+    if (context.page.includes('blogs')) {
+      return [
+        ['meta', { rel: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
+        ['meta', { rel: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }],
+      ]
+    }
+    else {
+      return [
+        ['meta', { rel: 'og:image', content: 'https://www.dustella.net/og.png' }],
+        ['meta', { rel: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
+      ]
+    }
+  },
+  buildEnd: async ({ outDir }) => {
+    const fs = await import('node:fs')
     const sitemap = new SitemapStream({ hostname: 'https://www.dustella.net/' })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
     links.forEach(link => sitemap.write(link))
+    const svg2img = await import('svg2img')
+    for (const link of links.filter(link => link.url.includes('blogs/'))) {
+      const svg = await generator(link.title)
+      svg2img.default(svg, (_, buffer) => {
+        fs.writeFileSync(resolve(`${outDir}`, `og-${link.title}.png`), buffer)
+      })
+    }
+    const svg = await generator('Dustella 的自留地')
+    svg2img.default(svg, (_, buffer) => {
+      fs.writeFileSync(resolve(`${outDir}`, 'og.png'), buffer)
+    })
     sitemap.end()
   },
 })
