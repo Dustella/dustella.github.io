@@ -61,23 +61,30 @@ export default defineConfig({
   },
   transformHead: async (context) => {
     const title = context.pageData.frontmatter.title
+
+    const metas = [
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:type', content: 'blog' }],
+      ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
+      ['meta', { property: 'og:site_name', content: 'Dustella 的自留地' }],
+      ['meta', { property: 'og:description', content: 'Dustella 的主页' }],
+      ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { property: 'twitter:site', content: '@Dustella' }],
+      ['meta', { property: 'twitter:title', content: title }],
+      ['meta', { property: 'twitter:description', content: 'Dustella 的主页' }],
+
+    ]
     if (context.page.includes('blogs')) {
-      return [
-        ['meta', { property: 'og:title', content: title }],
-        ['meta', { property: 'og:type', content: 'blog' }],
-        ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
+      metas.concat([
         ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
-        ['meta', { property: 'twitter:image:src', content: `https://www.dustella.net/og-${title}.png` }],
-      ]
+        ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }]],
+      )
     }
     else {
-      return [
-        ['meta', { property: 'og:title', content: title }],
-        ['meta', { property: 'og:type', content: 'blog' }],
-        ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
+      metas.concat([
         ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
-        ['meta', { property: 'twitter:image:src', content: 'https://www.dustella.net/og.png' }],
-      ]
+        ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
+      ])
     }
   },
   buildEnd: async ({ outDir }) => {

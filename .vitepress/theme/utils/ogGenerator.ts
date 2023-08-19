@@ -41,7 +41,7 @@ const item = (theTitle: string) => ({
                     type: 'span',
                     props: {
                       style: {
-                        fontSize: 24,
+                        fontSize: 44,
                       },
                       children: 'Dustella',
                     },
@@ -50,8 +50,8 @@ const item = (theTitle: string) => ({
                     type: 'span',
                     props: {
                       style: {
-                        fontSize: 26,
-                        width: 300,
+                        fontSize: 46,
+                        width: 600,
                       },
                       children: theTitle,
                     },
@@ -63,13 +63,13 @@ const item = (theTitle: string) => ({
               type: 'img',
               props: {
                 style: {
-                  width: 140,
-                  height: 140,
+                  width: 280,
+                  height: 280,
                   background: 'black',
                   borderRadius: '50%',
                 },
-                width: 140,
-                height: 140,
+                width: 280,
+                height: 280,
                 src: 'https://img-cdn.dustella.net/avtr.jpg',
               },
             }],
@@ -85,8 +85,8 @@ const generator = async (title: string) => {
   const theItem = item(title)
   const svg = await satori.default(theItem,
     {
-      width: 600,
-      height: 400,
+      width: 1200,
+      height: 630,
       fonts: [{
         name: 'MiSans',
         data: fs.readFileSync(resolve(__dirname, './assets/MiSans-Medium.ttf')),
