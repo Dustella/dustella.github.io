@@ -63,14 +63,14 @@ export default defineConfig({
     const title = context.pageData.frontmatter.title
     if (context.page.includes('blogs')) {
       return [
-        ['meta', { rel: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
-        ['meta', { rel: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }],
+        ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
+        ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }],
       ]
     }
     else {
       return [
-        ['meta', { rel: 'og:image', content: 'https://www.dustella.net/og.png' }],
-        ['meta', { rel: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
+        ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
+        ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
       ]
     }
   },
