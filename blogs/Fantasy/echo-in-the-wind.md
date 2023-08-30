@@ -5,6 +5,8 @@ date: 2023-07-14 23:00:00
 
 # 在风中回响-与死亡对话
 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2040788726&auto=1&height=66"></iframe>
+
 八月，夏天的风总和我的心一样燥热。
 
 很多人认为，低气压的天气总是让人沮丧。然而研究表明，并不是所有人时所谓“喜欢高气压、干燥、温度 20 多度”的天气，一些人会更适合潮湿的阴雨天，而我这种喜欢高气压的人被称为”Summer lover”。
