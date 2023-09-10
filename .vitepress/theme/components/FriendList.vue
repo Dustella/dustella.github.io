@@ -1,34 +1,14 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
 import {
   VPTeamPage,
   VPTeamPageTitle,
 } from 'vitepress/theme'
-import { computed, ref, triggerRef } from 'vue'
+import { computed, triggerRef } from 'vue'
 import VPTeamMembersItem from 'vitepress/dist/client/theme-default/components/VPTeamMembersItem.vue'
 
-import friends, { webIcon } from '../../../friends'
+import friends from '../../../friends'
 
-const beiyan = ref<DefaultTheme.TeamMember>(
-  {
-    name: '北雁云依',
-    links: [
-      {
-        icon: 'github',
-        link: 'https://github.com/beiyanyunyi',
-      }, {
-        icon: webIcon,
-        link: 'https://me.penclub.club/',
-      }, {
-        icon: 'twitter',
-        link: 'https://twitter.com/Beiyan_Yunyi',
-      }],
-    avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
-    desc: '嘿嘿，这是我家某位',
-  },
-)
-
-const renderer = computed(() => [beiyan.value, ...friends.sort(() => Math.random() - 0.5)])
+const renderer = computed(() => [...friends.sort(() => Math.random() - 0.5)])
 
 const classes = computed(() => [
   'small',
@@ -36,7 +16,7 @@ const classes = computed(() => [
 ])
 
 const doShuffle = () => {
-  triggerRef(beiyan)
+  triggerRef(renderer)
 }
 </script>
 

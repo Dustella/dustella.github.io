@@ -5,7 +5,22 @@ export const webIcon = { svg: '<svg t="1680068608298" class="icon" viewBox="0 0 
 export const bloggerIcon = { svg: '<svg t="1680068781742" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1193" width="32" height="32"><path d="M937.642667 1024H86.442667C38.4 1024 0 985.6 0 937.642667V86.442667C0 38.4 38.4 0 86.4 0H940.8C985.6 0 1024 38.4 1024 86.4v851.2C1024 985.6 985.6 1024 937.642667 1024zM512 169.6H384A214.4 214.4 0 0 0 169.6 384v256A214.4 214.4 0 0 0 384 854.357333h256A214.4 214.4 0 0 0 854.357333 640v-169.6c0-25.6-19.2-44.8-44.8-44.8H768a42.453333 42.453333 0 0 1-41.642667-41.642667A214.4 214.4 0 0 0 512 169.514667z m131.157333 512H384c-22.4 0-41.6-19.2-41.6-41.6s19.2-41.642667 41.6-41.642667h259.157333c22.442667 0 41.685333 19.2 41.685334 41.642667s-19.2 41.642667-41.6 41.642667z m-108.8-339.2c22.485333 0 41.642667 19.2 41.642667 41.6s-19.2 41.6-41.6 41.6h-153.6c-22.4 0-41.642667-19.2-41.642667-41.6s19.2-41.6 41.6-41.6h153.6z" p-id="1194"></path></svg>' }
 
 const friends: DefaultTheme.TeamMember[] = [
-
+  {
+    name: '北雁云依',
+    links: [
+      {
+        icon: 'github',
+        link: 'https://github.com/beiyanyunyi',
+      }, {
+        icon: webIcon,
+        link: 'https://me.penclub.club/',
+      }, {
+        icon: 'twitter',
+        link: 'https://twitter.com/Beiyan_Yunyi',
+      }],
+    avatar: 'https://img-cdn.dustella.net/byyy-avtr.png',
+    desc: '像云一样飘忽不定',
+  },
   {
     name: 'Cody Gua',
     links: [{
@@ -44,7 +59,7 @@ const friends: DefaultTheme.TeamMember[] = [
       link: 'https://jurt4201.blogspot.com/',
     }, {
       icon: webIcon,
-      link: 'https://jurt4201.work/#/md-src/index.md?lang=en;'
+      link: 'https://jurt4201.work/#/md-src/index.md?lang=en;',
     }],
     avatar: 'https://1.bp.blogspot.com/-ndfZdj0X-Ss/YQoyZQiHtQI/AAAAAAAAALs/JQvRfGtjEq8T0ztPK_A8fRmiAM3ZGOwPQCK4BGAYYCw/s113/unnamed.jpg',
     desc: 'Julian正在膜大佬 / FOSS lover',
