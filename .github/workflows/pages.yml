@@ -91,7 +91,7 @@ jobs:
           path: ./dist
 
       - name: Push to Cloudbase
-        uses: dustella/tcb-actions@d016b65d7274f2e385be146dd085eb855a056495
+        uses: dustella/tcb-actions@4f28fbf9a6f35919ca4d5e98233ed9f0f58a4039
         with:
           secret-id: ${{ secrets.SID }}
           secret-key: ${{ secrets.SKEY }}
