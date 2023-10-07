@@ -31,8 +31,8 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: /home/runner/.local/share/pnpm/store
+          # cache node_modules 
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
@@ -91,8 +91,14 @@ jobs:
           path: ./dist
 
       - name: Push to Cloudbase
+        uses: dustella/tcb-actions
+        with:
+          secret-id: ${{ secrets.SID }}
+          secret-key: ${{ secrets.SKEY }}
+          env-id: ${{ secrets.ENVID }}
+          dist: ./dist
 
-        run: |
-          npm install -g @cloudbase/cli
-          npx tcb login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
-          npx tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
+      #   run: |
+      #     npm install -g @cloudbase/cli
+      #     npx tcb login --apiKeyId  ${{SECRETS.SID}} --apiKey ${{SECRETS.SKEY}}
+      #     npx tcb hosting deploy ./dist . -e  ${{SECRETS.ENVID}}
