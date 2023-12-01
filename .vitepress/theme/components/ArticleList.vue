@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue'
+import { reactive, watch } from 'vue'
 // @ts-expect-error load data from .data files
 import { data as organizedFullPosts } from '../utils/getBlogList.data'
 import ListProvider from './ListProvider.vue'
@@ -8,13 +8,19 @@ import ListProvider from './ListProvider.vue'
 // do pagination, page size is 6
 
 const pageSize = 6
+const indexFromQuery = parseInt(location.search.match(/page=(\d+)/)?.[1] ?? '1')
 
-const currentPage = ref(parseInt(location.search.match(/page=(\d+)/)?.[1] ?? '1'))
-const totalPages = ref(Math.ceil(organizedFullPosts.length / pageSize))
+const pageIndex = reactive({
+  total: Math.ceil(organizedFullPosts.length / pageSize),
+  current: indexFromQuery,
+})
 
-const activeList = ref(true)
-const slot1 = ref(parseInt(location.search.match(/page=(\d+)/)?.[1] ?? '1'))
-const slot2 = ref(parseInt(location.search.match(/page=(\d+)/)?.[1] ?? '1'))
+const slots = reactive({
+  slot1: indexFromQuery,
+  slot2: indexFromQuery,
+  slot1Active: true,
+  direction: 'toright',
+})
 
 const renderPage = (index: number) => {
   const start = (index - 1) * pageSize
@@ -22,55 +28,47 @@ const renderPage = (index: number) => {
   return organizedFullPosts.slice(start, end)
 }
 
-const direction = ref(false)
-const animateName = computed(() => direction.value ? 'toleft' : 'toright')
+watch(() => pageIndex.current, (oldValue, newValue) => {
+  slots.slot1Active = !slots.slot1Active
 
-watch(currentPage, (oldValue, newValue) => {
-  activeList.value = !activeList.value
-
-  if (activeList.value)
-    slot1.value = currentPage.value
+  if (slots.slot1Active)
+    slots.slot1 = pageIndex.current
   else
-    slot2.value = currentPage.value
+    slots.slot2 = pageIndex.current
 
-  direction.value = oldValue < newValue
+  slots.direction = oldValue < newValue ? 'toleft' : 'toright'
 
-  if (currentPage.value === 1) {
-    history.replaceState(null, '', location.pathname)
-  }
-  else {
-    history.replaceState(
-      null,
-      '',
-      `${location.pathname}?page=${currentPage.value}`,
-    )
-  }
+  const newQuery = pageIndex.current === 1 ? '' : `?page=${pageIndex.current}`
+
+  history.replaceState(null, '', `${location.pathname}${newQuery}`)
+
+  window.scrollTo({ top: 0 })
 })
 </script>
 
 <template>
   <div class="flex sm:flex-row flex-col">
-    <Transition :name="animateName" mode="out-in">
-      <ListProvider v-if="activeList" :list-to-render="renderPage(slot1)" />
-      <ListProvider v-else :list-to-render="renderPage(slot2)" />
+    <Transition :name="slots.direction" mode="out-in">
+      <ListProvider v-if="slots.slot1Active" :list="renderPage(slots.slot1)" />
+      <ListProvider v-else :list="renderPage(slots.slot2)" />
     </Transition>
     <!-- do pagination -->
   </div>
   <div class="flex flex-row justify-center items-center">
     <button
       class="border-2 border-black p-2 m-2"
-      :disabled="currentPage === 1"
-      :class="currentPage === 1 ? 'opacity-50' : ''"
-      @click="currentPage--"
+      :disabled="pageIndex.current === 1"
+      :class="pageIndex.current === 1 ? 'opacity-50' : ''"
+      @click="pageIndex.current--"
     >
       上一页
     </button>
-    <span class="text-base">{{ currentPage }} / {{ totalPages }}</span>
+    <span class="text-base">{{ pageIndex.current }} / {{ pageIndex.total }}</span>
     <button
       class="border-2 border-black p-2 m-2"
-      :disabled="currentPage === totalPages"
-      :class="currentPage === totalPages ? 'opacity-50' : ''"
-      @click="currentPage++"
+      :disabled="pageIndex.current === pageIndex.total"
+      :class="pageIndex.current === pageIndex.total ? 'opacity-50' : ''"
+      @click="pageIndex.current++"
     >
       下一页
     </button>

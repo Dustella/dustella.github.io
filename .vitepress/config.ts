@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { createWriteStream } from 'node:fs'
+import type { HeadConfig } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
 import { SitemapStream } from 'sitemap'
@@ -59,10 +60,10 @@ export default defineConfig({
       links.push({ url, lastmod, title })
     }
   },
-  transformHead: async (context) => {
+  transformHead: (context) => {
     const title = context.pageData.frontmatter.title
 
-    const metas = [
+    let metas = [
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:type', content: 'blog' }],
       ['meta', { property: 'og:url', content: `https://dustella.net/${context.page.replace('.md', '')}` }],
@@ -74,24 +75,28 @@ export default defineConfig({
       ['meta', { property: 'twitter:description', content: 'Dustella 的主页' }],
     ]
     if (context.page.includes('blogs')) {
-      return metas.concat([
+      metas = metas.concat([
         ['meta', { property: 'og:image', content: `https://www.dustella.net/og-${title}.png` }],
         ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og-${title}.png` }]],
       )
     }
     else {
-      return metas.concat([
+      metas = metas.concat([
         ['meta', { property: 'og:image', content: 'https://www.dustella.net/og.png' }],
         ['meta', { property: 'twitter:image', content: 'https://www.dustella.net/og.png' }],
       ])
     }
+    return metas as HeadConfig[]
   },
   buildEnd: async ({ outDir }) => {
     const fs = await import('node:fs')
+    // begin sitemap generation
     const sitemap = new SitemapStream({ hostname: 'https://www.dustella.net/' })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
     links.forEach(link => sitemap.write(link))
+    // end sitemap generation
+    // begin og image generation
     const svg2img = await import('svg2img')
     for (const link of links.filter(link => link.url.includes('blogs/'))) {
       const svg = await generator(link.title)
@@ -103,6 +108,7 @@ export default defineConfig({
     svg2img.default(svg, (_, buffer) => {
       fs.writeFileSync(resolve(`${outDir}`, 'og.png'), buffer)
     })
+    // end og image generation
     sitemap.end()
   },
 })
