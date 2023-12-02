@@ -22,6 +22,19 @@ const friends: DefaultTheme.TeamMember[] = [
     desc: '像云一样飘忽不定',
   },
   {
+    name: 'TurboHsu',
+    links: [{
+      icon: webIcon,
+      link: 'https://owow.cc',
+    }, {
+      icon: 'github',
+      link: 'https://github.com/TurboHsu',
+    },
+    ],
+    avatar: 'https://owow.cc/assets/avatar.jpg',
+    desc: 'TurboHsu 应该不是猫',
+  },
+  {
     name: 'Cody Gua',
     links: [{
       icon: bloggerIcon,
