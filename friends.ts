@@ -142,6 +142,19 @@ const friends: DefaultTheme.TeamMember[] = [
     avatar: 'https://a.vincent1230.top/blogrol/avatar.jpg',
     desc: '太阳出来了 雾就会散的',
   },
+  {
+    name: 'TurboHsu',
+    links: [{
+      icon: webIcon,
+      link: 'https://owow.cc',
+    }, {
+      icon: 'github',
+      link: 'https://github.com/TurboHsu',
+    },
+    ],
+    avatar: 'https://owow.cc/assets/avatar.jpg',
+    desc: 'TurboHsu 应该不是猫',
+  },
 ]
 
 export default friends
