@@ -21,7 +21,7 @@ export default defineConfig({
       { text: 'About', link: '/about' },
     ],
     footer: {
-      message: '苏ICP备20013766号-2',
+      message: '<a class="icp" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备20013766号-2</a>',
       copyright: 'By Dustella, Under CC BY-NC-SA 4.0 License',
     },
     socialLinks: [

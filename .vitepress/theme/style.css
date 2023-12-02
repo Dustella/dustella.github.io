@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.icp:hover {
+  text-decoration: underline;
+}
+
 :root {
   --vp-c-brand: #808191;
   --vp-c-brand-light: #7f8095;
