@@ -3,21 +3,19 @@ import {
   VPTeamPage,
   VPTeamPageTitle,
 } from 'vitepress/theme'
-import { computed, triggerRef } from 'vue'
+import type { DefaultTheme } from 'vitepress/theme'
+import { computed, unref } from 'vue'
 import VPTeamMembersItem from 'vitepress/dist/client/theme-default/components/VPTeamMembersItem.vue'
 
-import friends from '../../../friends'
+const props = defineProps<{ friends: DefaultTheme.TeamMember[] }>()
+const friends = unref(props.friends)
 
-const renderer = computed(() => [...friends.sort(() => Math.random() - 0.5)])
+const renderer = computed(() => friends.slice(0).sort(() => Math.random() - 0.5))
 
 const classes = computed(() => [
   'small',
   `count-${renderer.value.length}`,
 ])
-
-const doShuffle = () => {
-  triggerRef(renderer)
-}
 </script>
 
 <template>
@@ -30,11 +28,6 @@ const doShuffle = () => {
         欢迎扩列
       </template>
     </VPTeamPageTitle>
-    <div class="flex items-center justify-center">
-      <button class="text-sm underline text-center py-10 text-gray-500 tracking-[0.05rem]" @click="doShuffle">
-        洗牌
-      </button>
-    </div>
     <ClientOnly>
       <div class="VPTeamMembers" :class="classes">
         <div class="container">
@@ -45,7 +38,7 @@ const doShuffle = () => {
           </TransitionGroup>
         </div>
       </div>
-    </ClientOnly>
+    </ClientOnly>Z
   </VPTeamPage>
 </template>
 

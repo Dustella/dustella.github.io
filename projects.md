@@ -5,7 +5,7 @@ layout: page
 
 <script lang="ts" setup>
 import VPFeatures from 'vitepress/dist/client/theme-default/components/VPFeatures.vue'
-import works from './works'
+import { works } from './data'
 </script>
 
 <main class="xl:max-w-[980px] max-w-7/8 mx-auto">

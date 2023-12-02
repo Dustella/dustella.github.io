@@ -5,20 +5,6 @@ nocomment: true
 title: ""
 ---
 
-<script setup>
-import { onMounted, ref } from 'vue'
-
-const isFromBeiyanyunyi = ref(false)
-onMounted(()=>{
-    const { referrer } = document
-    isFromBeiyanyunyi.value = referrer.search("penclub.club") !== -1 ||  referrer.search("beiyanyunyi.github.io") !== -1
-})
-</script>
-
-# {{ isFromBeiyanyunyi ? "北雁云依的伴侣 Dustella": "Dustella Here"}}
-
-{{ isFromBeiyanyunyi ? "咕噜咕噜，这里是北雁云依的男朋友呢，看来你是从她的站点来的哦" : ""   }}
-
 一个普通的前端开发、一个诗人、曾经是理想主义者。
 
 曾经整过不少活儿，这是我的不知道第几个博客。可以看看我写的笨拙的诗和非常少的技术文章。

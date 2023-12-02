@@ -1,12 +1,12 @@
 <script setup>
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-defineProps(['listToRender'])
+defineProps(['list'])
 </script>
 
 <template>
   <ul class="pl-2!">
     <li
-      v-for="post in listToRender"
+      v-for="post in list"
       :key="post.date"
       class="list-none p-0 m-0"
     >
