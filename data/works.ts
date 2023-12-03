@@ -18,14 +18,14 @@ const works: MyWorks = {
       title: 'NUISTCraft',
       details: '一个 NUIST 的 Minecraft 服务器',
       link: 'https://docs.nuistcraft.com',
-      icon: { src: 'https://nuistcraft.com/img/undraw_docusaurus_mountain.svg', height: '15px' },
+      icon: { src: 'https://docs.nuistcraft.com/img/undraw_docusaurus_mountain.svg', height: '15px' },
     },
     {
 
       title: 'NuistShare',
       details: '资料共享',
       link: 'https://www.nuistshare.cn',
-      icon: { src: 'https://nuistcraft.com/img/undraw_docusaurus_mountain.svg', height: '15px' },
+      icon: { src: 'https://docs.nuistcraft.com/img/undraw_docusaurus_mountain.svg', height: '15px' },
     },
   ],
   '项目与公共 API': [

@@ -70,7 +70,7 @@ const item = (theTitle: string) => ({
                 },
                 width: 280,
                 height: 280,
-                src: 'https://img-cdn.dustella.net/avtr.jpg',
+                src: 'https://img-cdn.dustella.net/markdown/avtr-layer.png',
               },
             }],
         },

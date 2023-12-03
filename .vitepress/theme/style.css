@@ -30,8 +30,8 @@ html {
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(120deg,
-      #717171 30%,
-      rgb(76, 82, 83));
+      #4b2a2a 30%,
+      #404d4f);
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
       #857979 50%,
       #bfbfbf 50%);
