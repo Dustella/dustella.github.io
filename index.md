@@ -7,6 +7,6 @@ hero:
   text: "我在这里"
   tagline: 咕噜咕噜咕噜
   image:
-    src: assets/avtr-layer.png
+    src: https://img-cdn.dustella.net/markdown/avtr-layer.png
     alt: avtr
 ---
