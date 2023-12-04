@@ -79,8 +79,8 @@ const generator = async (title: string) => {
   const theItem = item(title)
   const svg = await satori.default(theItem,
     {
-      width: 800,
-      height: 400,
+      width: 1200,
+      height: 630,
       fonts: [{
         name: 'MiSans',
         data: fs.readFileSync(resolve(__dirname, './assets/MiSans-Medium.ttf')),

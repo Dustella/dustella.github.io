@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 .content-container {
-  font-family: MiSans;
+  font-family: MiSans, sans-serif;
 }
 
 html {
