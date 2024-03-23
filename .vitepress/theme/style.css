@@ -12,13 +12,13 @@ html {
 }
 
 :root {
-  --vp-c-brand: #808191;
-  --vp-c-brand-light: #7f8095;
-  --vp-c-brand-lighter: #9f9fa7;
-  --vp-c-brand-lightest: #c5c6d6;
-  --vp-c-brand-dark: #67687c;
-  --vp-c-brand-darker: #5c5d78;
-  --vp-c-brand-dimm: #53535914;
+  --vp-c-brand-1: #808191;
+  --vp-c-brand-light-1: #7f8095;
+  --vp-c-brand-lighter-1: #9f9fa7;
+  --vp-c-brand-lightest-1: #c5c6d6;
+  --vp-c-brand-dark-1: #67687c;
+  --vp-c-brand-darker-1: #5c5d78;
+  --vp-c-brand-dimm-1: #53535914;
   --vp-button-brand-border: var(--vp-c-brand-light);
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand);
