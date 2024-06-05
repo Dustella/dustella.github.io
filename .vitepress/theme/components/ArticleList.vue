@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { reactive, watch } from 'vue'
 // @ts-expect-error load data from .data files
-import { data as organizedFullPosts } from '../utils/getBlogList.data'
+import { data as organizedFullPosts } from '../../utils/posts.data'
 import ListProvider from './ListProvider.vue'
 
 // organized Posts is a list,

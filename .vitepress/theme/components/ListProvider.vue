@@ -11,7 +11,7 @@ defineProps(['list'])
       class="list-none p-0 m-0"
     >
       <div class="border-2 border-black p-4">
-        <VPLink :href="post.url" class="sm:text-xl text-base">
+        <VPLink :href="post.url" class="sm:text-xl no-underline! hover:underline! text-base">
           {{ post.title }}
         </VPLink>
         <p class="text-[0.9rem] text-gray">

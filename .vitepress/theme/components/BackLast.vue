@@ -5,7 +5,7 @@ import { useRoute } from 'vitepress'
 // this should be made reactive
 const shouldRender = () => {
   const route = useRoute()
-  return route.path !== '/blogs' && route.path !== '/blogs/'
+  return route.path !== '/blogs' && route.path !== '/blogs/' && route.path.includes('/blogs')
 }
 
 const backLast = () => {
