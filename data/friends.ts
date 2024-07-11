@@ -197,6 +197,18 @@ const friends: DefaultTheme.TeamMember[] = [
     avatar: "https://a.vincy1230.net/blogroll/avatar.jpg",
     desc: "太阳出来了 雾就会散的",
   },
+  {
+    name: "Cambridge",
+    links: [
+      {
+        icon: webIcon,
+        link: "http://www.cambridgez.xyz/",
+      },
+    ],
+    avatar:
+      "http://47.121.120.15/wp-content/uploads/2024/06/cropped-WechatIMG30-1.jpg",
+    desc: "这是个大佬",
+  },
 ];
 
 export default friends;
