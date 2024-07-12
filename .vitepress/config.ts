@@ -11,7 +11,7 @@ const transformer = postRenderGeneration();
 export default defineConfig({
   ...baseConfig(),
   vite: {
-    plugins: [Unocss()],
+    plugins: [Unocss() as never],
   },
   head: [...staticHeaders()],
   transformHtml: (_, id, context) => {
