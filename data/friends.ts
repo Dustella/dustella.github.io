@@ -20,7 +20,7 @@ const friends: DefaultTheme.TeamMember[] = [
       },
       {
         icon: webIcon,
-        link: "https://me.penclub.club/",
+        link: "https://stblog.penclub.club/",
       },
       {
         icon: "twitter",
@@ -82,7 +82,7 @@ const friends: DefaultTheme.TeamMember[] = [
       },
     ],
     avatar:
-      "https://npm.elemecdn.com/jinzhi-assets@1.0.0/img/t01050efbe9ea36dd6a.jpg",
+      "https://s1-cdn.dustella.net/images/jinzhi.jpg",
     desc: "瑾知真可爱",
   },
   {
@@ -179,7 +179,7 @@ const friends: DefaultTheme.TeamMember[] = [
       },
     ],
     avatar:
-      "https://images.drshw.tech/images/notes/%E6%A0%87%E5%87%86%E5%A4%B4%E5%83%8F.jpg",
+      "https://s1-cdn.dustella.net/images/syw.jpg",
     desc: "特立独行的炼金术士",
   },
   {
@@ -206,7 +206,7 @@ const friends: DefaultTheme.TeamMember[] = [
       },
     ],
     avatar:
-      "http://47.121.120.15/wp-content/uploads/2024/06/cropped-WechatIMG30-1.jpg",
+      "https://s1-cdn.dustella.net/images/cambridge.jpg",
     desc: "这是个大佬",
   },
 ];
