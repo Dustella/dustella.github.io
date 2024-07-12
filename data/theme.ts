@@ -9,7 +9,14 @@ const baseConfig = () => {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Blogs', link: '/blogs/' },
+      { text: 'Blogs', items:[
+        {
+          text:"Tech", link:"/blogs/tech"
+        },
+        {
+          text:"Life", link:"/blogs/life"
+        }
+      ] },
       { text: 'Projects', link: '/projects' },
       { text: 'Links', link: '/links' },
       { text: 'About', link: '/about' },

@@ -25,14 +25,12 @@ export default {
     // @ts-expect-error import for vite
     if (!import.meta.env.SSR) {
       const { default: NProgress } = await import('nprogress')
-      const { inject } = await import('@vercel/analytics')
       router.onBeforeRouteChange = () => {
         NProgress.start()
       }
       router.onAfterRouteChanged = () => {
         NProgress.done()
       }
-      inject()
     }
     app.component('ArticleList', ArticleList)
     app.component('FriendList', FriendList)

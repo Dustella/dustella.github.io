@@ -4,27 +4,30 @@ defineProps(['list'])
 </script>
 
 <template>
-  <ul class="pl-2!">
+  <ul class=" w-full pl-0!">
     <li
       v-for="post in list"
       :key="post.date"
-      class="list-none p-0 m-0"
+      class="list-none  my-1 b-b-(solid 1 [--vp-c-divider])"
     >
-      <div class="border-2 border-black p-4">
+      <div class="py-4">
         <VPLink :href="post.url" class="sm:text-xl no-underline! hover:underline! text-base">
-          {{ post.title }}
+          <!-- <h2 -->
+
+            {{ post.title }}
+          <!-- </h2 -->
         </VPLink>
-        <p class="text-[0.9rem] text-gray">
+        <span class="text-[0.9rem]! text-gray! block lg:inline">
+
           {{
             new Date(post.date).toLocaleDateString("zh-CN", {
-              weekday: "long",
+              // weekday: "long",
               year: "numeric",
               month: "long",
               day: "numeric",
             })
-          }},
-          {{ post.folder }}
-        </p>
+          }}
+        </span>
       </div>
     </li>
   </ul>

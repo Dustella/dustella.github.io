@@ -19,7 +19,7 @@ const classes = computed(() => [
 </script>
 
 <template>
-  <VPTeamPage>
+  <VPTeamPage class="m-0!">
     <VPTeamPageTitle>
       <template #title>
         朋友们
@@ -38,7 +38,7 @@ const classes = computed(() => [
           </TransitionGroup>
         </div>
       </div>
-    </ClientOnly>Z
+    </ClientOnly>
   </VPTeamPage>
 </template>
 

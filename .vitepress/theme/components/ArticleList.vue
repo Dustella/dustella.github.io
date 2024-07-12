@@ -1,11 +1,20 @@
 <script lang="ts" setup>
 import { reactive, watch } from 'vue'
 // @ts-expect-error load data from .data files
-import { data as organizedFullPosts } from '../../utils/posts.data'
+import { data as rawFullPosts } from '../../utils/posts.data'
 import ListProvider from './ListProvider.vue'
 
 // organized Posts is a list,
 // do pagination, page size is 6
+
+const props = withDefaults(defineProps<{
+  folder?: string
+}>(),
+  { folder: "" })
+
+const organizedFullPosts =
+  (rawFullPosts as { folder: string, url: string, date: string, title: string }[])
+    .filter((post) => post.folder == props.folder || props.folder == "")
 
 const pageSize = 6
 const indexFromQuery = parseInt(location.search.match(/page=(\d+)/)?.[1] ?? '1')
@@ -47,29 +56,21 @@ watch(() => pageIndex.current, (oldValue, newValue) => {
 </script>
 
 <template>
-  <div class="flex sm:flex-row flex-col">
+  <div class="flex sm:flex-row flex-col px-0">
     <Transition :name="slots.direction" mode="out-in">
       <ListProvider v-if="slots.slot1Active" :list="renderPage(slots.slot1)" />
       <ListProvider v-else :list="renderPage(slots.slot2)" />
     </Transition>
     <!-- do pagination -->
   </div>
-  <div class="flex flex-row justify-center items-center">
-    <button
-      class="border-2 border-black p-2 m-2"
-      :disabled="pageIndex.current === 1"
-      :class="pageIndex.current === 1 ? 'opacity-50' : ''"
-      @click="pageIndex.current--"
-    >
+  <div class="flex flex-row justify-begin items-center transition-all duration-500">
+    <button class="border-2 border-black p-2 m-2" :disabled="pageIndex.current === 1"
+      :class="pageIndex.current === 1 ? 'opacity-50' : ''" @click="pageIndex.current--">
       上一页
     </button>
     <span class="text-base">{{ pageIndex.current }} / {{ pageIndex.total }}</span>
-    <button
-      class="border-2 border-black p-2 m-2"
-      :disabled="pageIndex.current === pageIndex.total"
-      :class="pageIndex.current === pageIndex.total ? 'opacity-50' : ''"
-      @click="pageIndex.current++"
-    >
+    <button class="border-2 border-black p-2 m-2" :disabled="pageIndex.current === pageIndex.total"
+      :class="pageIndex.current === pageIndex.total ? 'opacity-50' : ''" @click="pageIndex.current++">
       下一页
     </button>
   </div>
@@ -80,22 +81,27 @@ watch(() => pageIndex.current, (oldValue, newValue) => {
 .toleft-leave-active {
   transition: all 0.5s ease;
 }
-.toleft-enter-from{
+
+.toleft-enter-from {
   opacity: 0;
   transform: translateX(-30px);
 }
+
 .toleft-leave-to {
   opacity: 0;
   transform: translateX(30px);
 }
+
 .toright-enter-active,
 .toright-leave-active {
   transition: all 0.5s ease;
 }
-.toright-enter-from{
+
+.toright-enter-from {
   opacity: 0;
   transform: translateX(30px);
 }
+
 .toright-leave-to {
   opacity: 0;
   transform: translateX(-30px);

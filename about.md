@@ -3,17 +3,31 @@
 layout: doc
 nocomment: true
 title: ""
+noBack: true
 ---
 
-一个普通的前端开发、一个诗人、曾经是理想主义者。
 
-曾经整过不少活儿，这是我的不知道第几个博客。可以看看我写的笨拙的诗和非常少的技术文章。
+### Who is Dustella
 
-我运营一些公共服务，例如资源站和 MC 服务器。可以去 [Projects](/projects) 中查看。
+I am currently a postguaduate student. Call me `特菈(Tella)`.  Feel free to PM.
 
-我 [有很多的朋友们](/links) 。我喜欢和大家交朋友。
+### Interests
 
-欢迎关注我的 Github，关注 [我的 Telegram Channel](https://t.me/dailytella) 。你可以在 Telegram 上联系上我。
+- 🧭 **Deep Learning**, focused on `S2S Forecasts` and `Image Segmentation`
+
+- 🌍 **Web Development**, skilled at H5 Game Development and complex animations
+- ⚒️ **Reverse Engineering**, **Data Science**, among many other things related to Computer Science
+
+- 🎹 **(New) Maimai DX** (A Music Arcade Game) you are welcome to join me
+
+### Contacts
+
+- Email `dustella@yeah.net`
+
+- Telegram [@Dustella](https://t.me/dustella)
+
+- Telegram Channel [特菈的日常与奇迹](https://t.me/dailytella)
+
 
 ---
 
