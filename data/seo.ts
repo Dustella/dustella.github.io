@@ -17,7 +17,7 @@ const staticHeaders = () => {
 }
 
 const opengraphHeaders = (context: TransformContext) => {
-  const title = context.pageData.frontmatter.title
+  const title = context.pageData.frontmatter.title ?? "Dustella 的自留地"
 
   let metas = [
     ['meta', { property: 'og:title', content: title }],

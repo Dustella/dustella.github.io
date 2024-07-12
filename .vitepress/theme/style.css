@@ -30,7 +30,7 @@ html {
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(120deg,
-      #4b2a2a 30%,
+      #7f85d1 30%,
       #404d4f);
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
       #857979 50%,
@@ -41,12 +41,14 @@ html {
 
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media (min-width: 640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
   }
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media (min-width: 960px) {
   :root {
     --vp-home-hero-image-filter: blur(72px);
