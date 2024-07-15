@@ -209,6 +209,28 @@ const friends: DefaultTheme.TeamMember[] = [
       "https://s1-cdn.dustella.net/images/cambridge.jpg",
     desc: "这是个大佬",
   },
+  {
+    name: "小洛灵",
+    links: [
+      {
+        icon: webIcon, 
+        link: "https://blog.luoling.moe"
+      }
+    ],
+    avatar: "https://blog.luoling.moe/images/avatar.jpg",
+    desc: "小洛灵万人迷"
+  },
+  {
+    name: "StevenRCE0",
+    links: [
+      {
+        icon: webIcon,
+        link: "https://rcex.live"
+      }
+    ],
+    avatar: "https://c.rcex.live:8/IR/Robot%20Standard.png",
+    desc: "摸鱼客"
+  }
 ];
 
 export default friends;
