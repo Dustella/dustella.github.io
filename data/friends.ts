@@ -230,6 +230,17 @@ const friends: DefaultTheme.TeamMember[] = [
     ],
     avatar: "https://c.rcex.live:8/IR/Robot%20Standard.png",
     desc: "摸鱼客"
+  },
+  {
+    name: "Lihewin",
+    links: [
+      {
+        icon: webIcon,
+        link: "https://habitats.top"
+      }
+    ],
+    avatar: "https://img.habitats.top/2024/07/b54f2ea3abb15802b3dea932c12c79b6.webp",
+    desc: "零酒精网安新手"
   }
 ];
 
