@@ -33,5 +33,7 @@ words:
   - lastmod
   - juejin
   - opengraph
+  - giscus
+  - stylelint
 ignoreWords: []
 import: []

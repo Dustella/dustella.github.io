@@ -7,8 +7,8 @@
   "type": "module",
   "author": "Dustella",
   "scripts": {
-    "dev": "vitepress dev --host",
-    "build": "vitepress build",
+    "dev": "vitepress dev site --host",
+    "build": "vitepress build site",
     "preview": "vitepress preview"
   },
   "peerDependencies": {
@@ -17,34 +17,19 @@
   "dependencies": {
     "@algolia/client-search": "^4.22.1",
     "@giscus/vue": "^3.0.0",
-    "@vercel/analytics": "^1.2.2",
-    "@vueuse/head": "^2.0.0",
-    "animate.css": "^4.1.1",
-    "escape-html": "^1.0.3",
-    "fs-extra": "^11.2.0",
-    "gray-matter": "^4.0.3",
-    "nprogress": "^0.2.0",
-    "postcss": "8.4.38",
-    "postcss-html": "^1.6.0",
-    "sass": "^1.72.0",
-    "satori": "^0.10.13",
-    "sitemap": "^7.1.1",
-    "svg2img": "1.0.0-beta.2",
-    "unocss": "^0.58.6",
-    "vite": "^5.2.4",
-    "vue-tsc": "^2.0.7"
+    "nprogress": "^0.2.0"
   },
   "devDependencies": {
+    "satori": "^0.10.13",
+    "unocss": "^0.58.6",
+    "vite": "^5.2.4",
+    "vue-tsc": "^2.0.7",
+    "sitemap": "^7.1.1",
+    "svg2img": "1.0.0-beta.2",
     "@antfu/eslint-config": "^2.24.0",
-    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.11.30",
     "@unocss/transformer-variant-group": "^0.61.6",
     "eslint": "9.8.0",
-    "stylelint": "^16.2.1",
-    "stylelint-config-recommended-vue": "^1.5.0",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-standard-scss": "^13.0.0",
-    "stylelint-scss": "^6.2.1",
     "typescript": "^5.4.3",
     "vitepress": "1.3.0",
     "vue": "^3.4.21"
