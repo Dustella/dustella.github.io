@@ -6,9 +6,11 @@ import {
 import type { DefaultTheme } from 'vitepress/theme'
 import { computed, unref } from 'vue'
 import VPTeamMembersItem from 'vitepress/dist/client/theme-default/components/VPTeamMembersItem.vue'
+import { useData } from 'vitepress'
 
-const props = defineProps<{ friends: DefaultTheme.TeamMember[] }>()
-const friends = unref(props.friends)
+const { frontmatter } = useData()
+
+const friends = frontmatter.value.friends as DefaultTheme.TeamMember[]
 
 const renderer = computed(() => friends.slice(0).sort(() => Math.random() - 0.5))
 

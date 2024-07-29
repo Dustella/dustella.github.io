@@ -1,24 +1,54 @@
 ---
+layout: projects
 title: 项目
-layout: page
----
 
-<script lang="ts" setup>
-import VPFeatures from 'vitepress/dist/client/theme-default/components/VPFeatures.vue'
-import { works } from './data'
-</script>
-
-<main class="xl:max-w-[980px] max-w-7/8 mx-auto">
-    <section v-for="([title, work]) in Object.entries(works)" :key="title">
-        <h1 class="text-[1.2rem] text-gray-500 mt-10">
-        {{ title }}
-        </h1>
-        <VPFeatures :features="work" class="my-6" />
-    </section>
-</main>
-
-<style scoped>
-:deep(.VPFeatures ){
-    padding: 0;
-}
-</style>
+works:
+  常用公共服务:
+  - title: 杂货铺
+    details: 一个资源站，大部分工具和镜像俱全
+    link: https://index.dustella.net
+    icon:
+      src: https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg
+      height: 15px
+  - title: NUISTCraft
+    details: 一个 NUIST 的 Minecraft 服务器
+    link: https://docs.nuistcraft.com
+    icon:
+      src: https://docs.nuistcraft.com/img/undraw_docusaurus_mountain.svg
+      height: 15px
+  - title: NuistShare
+    details: 资料共享
+    link: https://www.nuistshare.cn
+    icon:
+      src: https://docs.nuistcraft.com/img/undraw_docusaurus_mountain.svg
+      height: 15px
+  项目与公共 API:
+  - title: Colorless
+    details: 一个 Vitepress 博客模板
+    link: https://github.com/Dustella
+  - title: ACG 图床接口
+    details: 没有 R18 的图，可以单独查询猫娘图片
+    link: https://acg-img.dustella.net/
+  - title: Whois 爬虫
+    details: '基于 Cloudflare Workers '
+    link: https://github.com/Dustella/whois-api
+  玩具和 Demo:
+  - title: Negatives
+    details: 基于Rust的词法语法分析器
+    link: https://github.com/Dustella/negatives
+  - title: 大葱打水客户端
+    details: 基于Worker的协议转发
+    link: https://github.com/Dustella/water-client
+  - title: 信带同学一键互评
+    details: 自动互评脚本
+    link: https://github.com/Dustella/nuist-auto-peer-evaluation
+  已经停止维护:
+  - title: NUIST 校园网登陆 golang
+    details: 现在自动认证已经不需要了
+    link: https://github.com/Dustella/i-NUIST-login-golang
+  - title: 室内操工厂
+    details: Web 重置
+    link: https://github.com/Dustella/ide-reforged
+  - title: Charlottebot
+    details: 一个基于 Mirai 的 QQ 机器人
+    link: https://github.com/Dustella/Charlottebot

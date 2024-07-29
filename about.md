@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: doc
-nocomment: true
+noComment: true
 title: ""
 noBack: true
 ---

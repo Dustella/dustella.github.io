@@ -3,10 +3,12 @@ import Giscus from '@giscus/vue'
 import { useData } from 'vitepress'
 
 const { frontmatter, isDark } = useData()
+
+const shouldShowComments = frontmatter !== undefined && !frontmatter.value.noComment
 </script>
 
 <template>
-  <div v-if="!frontmatter.nocomment" class="comments-container">
+  <div v-if="shouldShowComments" class="comments-container">
     <ClientOnly>
       <Giscus
         id="comments"

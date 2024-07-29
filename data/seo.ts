@@ -1,6 +1,6 @@
 import type { HeadConfig, TransformContext } from 'vitepress'
 
-const staticHeaders = () => {
+function staticHeaders() {
   const headers = [
     ['link', { rel: 'icon', href: 'https://img-cdn.dustella.net/wizard.ico' }],
     // meta
@@ -10,14 +10,13 @@ const staticHeaders = () => {
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'googlebot', content: 'index, follow' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-kpKmYXHSMC' }],
-    ['link', { rel: 'stylesheet', href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Medium/result-uni.css' }],
-    ['link', { rel: 'stylesheet', href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Regular/result.css' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap' }],
   ]
   return headers as HeadConfig[]
 }
 
-const opengraphHeaders = (context: TransformContext) => {
-  const title = context.pageData.frontmatter.title ?? "Dustella 的自留地"
+function opengraphHeaders(context: TransformContext) {
+  const title = context.pageData.frontmatter.title ?? 'Dustella 的自留地'
 
   let metas = [
     ['meta', { property: 'og:title', content: title }],
@@ -33,7 +32,8 @@ const opengraphHeaders = (context: TransformContext) => {
   if (context.page.includes('blogs')) {
     metas = metas.concat([
       ['meta', { property: 'og:image', content: `https://www.dustella.net/og/${title}.png` }],
-      ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og/${title}.png` }]],
+      ['meta', { property: 'twitter:image', content: `https://www.dustella.net/og/${title}.png` }],
+    ],
     )
   }
   else {
