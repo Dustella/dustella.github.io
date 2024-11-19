@@ -144,6 +144,15 @@ friends:
   - icon: website
     link: https://habitats.top
 
+- name: laysath
+  avatar: https://avatars.githubusercontent.com/u/120073078
+  desc: NAS资深玩家 / PTer
+  links:
+  - icon: website
+    link: https://laysath.cn
+  - icon: github
+    link: https://github.com/faithleysath
+
 ---
 
 <!--
