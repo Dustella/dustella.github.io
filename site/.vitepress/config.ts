@@ -25,4 +25,7 @@ export default defineConfig({
     await transformer.generateSitemap(outDir)
     await transformer.generateOpenGraphImages(outDir)
   },
+  markdown:{
+    math: true
+  }
 })

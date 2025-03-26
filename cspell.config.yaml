@@ -1,39 +1,44 @@
-version: '0.2'
+version: "0.2"
 ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
   - antfu
+  - arctan
   - Attributify
   - Ayabit
   - changelogen
   - CODEMAP
   - composables
   - defu
+  - dustella
+  - FPFH
+  - giscus
   - Guii
   - guiiai
   - iconify
+  - juejin
+  - Kanade
+  - lastmod
   - lucide
+  - mathcal
   - memfs
   - mkdist
   - nodir
+  - nprogress
   - nuxi
   - Nuxt
   - openai
+  - opengraph
   - pinia
+  - RANSAC
+  - stylelint
   - unocss
   - unplugin
+  - unref
   - vite
   - vitepress
   - vnode
-  - nprogress
   - vueuse
-  - unref
-  - dustella
-  - lastmod
-  - juejin
-  - opengraph
-  - giscus
-  - stylelint
 ignoreWords: []
 import: []
