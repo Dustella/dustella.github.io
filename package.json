@@ -26,6 +26,7 @@
     "@types/node": "^20.11.30",
     "@unocss/transformer-variant-group": "^0.61.6",
     "eslint": "9.8.0",
+    "eslint-plugin-format": "^1.0.1",
     "satori": "^0.10.13",
     "sitemap": "^7.1.1",
     "svg2img": "1.0.0-beta.2",
