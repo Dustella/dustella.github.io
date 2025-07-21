@@ -19,12 +19,12 @@ const { frontmatter } = useData()
 const folder = computed(() => frontmatter.value.folder)
 const pageSize = computed(() => frontmatter.value.pageSize ?? 6)
 
-let indexFromQuery  = "1"
+let indexFromQuery = '1'
 // this is just to make ssr builder happy
-if (!import.meta.env.SSR){
+if (!import.meta.env.SSR) {
   indexFromQuery = location.search.match(/page=(\d+)/)?.[1] ?? '1'
 }
-const index = ref(Number.parseInt(indexFromQuery ))
+const index = ref(Number.parseInt(indexFromQuery))
 
 const organizedFullPosts
   = computed(() => (rawFullPosts as Post[])
@@ -45,7 +45,7 @@ function renderPage(index: number) {
 <template>
   <ClientOnly>
     <div class="max-w-[980px] mx-auto pt-10">
-      <div class="flex sm:flex-row flex-col px-0">
+      <div class="flex sm:flex-row flex-col px-10">
         <ListProvider :list="renderPage(index)" />
         <!-- do pagination -->
       </div>
