@@ -67,6 +67,25 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+  deploy-edgeone:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy Tencent EdgeOne
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.11.0 # 选择适合的 Node.js 版本
+
+      - name: Install EdgeOne CLi
+        run:
+          npm install -g edgeone
+
+      - name: Deploy to EdgeOne Pages
+        run: npx edgeone pages deploy ./dist -n candystore -t ${{ secrets.EDGEONE_API_TOKEN }} [-e <env>]
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+
   # deploy-cloudbase:
   #   needs: build
   #   runs-on: ubuntu-latest
