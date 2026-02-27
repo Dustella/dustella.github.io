@@ -29,7 +29,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependency and build
-        run:
+        run: |
           bun i
           bun run build
 
