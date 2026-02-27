@@ -25,23 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          # cache node_modules
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
-
       - name: Install dependency and build
+        uses: oven-sh/setup-bun@v2
         run: |
-          corepack enable
-          pnpm i
-          pnpm build
+          bun i
+          bun run build
 
       - name: Upload GhPages Artifact
         uses: actions/upload-pages-artifact@v3
@@ -73,13 +61,11 @@ jobs:
     name: Deploy Tencent EdgeOne
     steps:
       - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.11.0 # 选择适合的 Node.js 版本
+        uses: oven-sh/setup-bun@v2
 
       - name: Install EdgeOne CLi
         run:
-          npm install -g edgeone
+          bun install -g edgeone
 
       - name: Download Artifact
         uses: actions/download-artifact@v4
@@ -88,7 +74,7 @@ jobs:
           path: ./dist
 
       - name: Deploy to EdgeOne Pages
-        run: npx edgeone pages deploy ./dist -n candystore -t ${{ secrets.EDGEONE_API_TOKEN }}
+        run: bun x edgeone pages deploy ./dist -n candystore -t ${{ secrets.EDGEONE_API_TOKEN }}
         env:
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
 
