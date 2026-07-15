@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import type { DefaultTheme } from 'vitepress/theme'
 import { useData } from 'vitepress'
 import VPFeatures from 'vitepress/dist/client/theme-default/components/VPFeatures.vue'
-import type { DefaultTheme } from 'vitepress/theme'
 
 export interface Feature {
   icon?: DefaultTheme.FeatureIcon
@@ -29,7 +29,7 @@ const works = frontmatter.value.works as Record<string, Feature[]>
 </template>
 
 <style scoped>
-:deep(.VPFeatures ){
-    padding: 0;
+:deep(.VPFeatures) {
+  padding: 0;
 }
 </style>

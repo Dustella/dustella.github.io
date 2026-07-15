@@ -46,6 +46,6 @@ function opengraphHeaders(context: TransformContext) {
 }
 
 export {
-  staticHeaders,
   opengraphHeaders,
+  staticHeaders,
 }

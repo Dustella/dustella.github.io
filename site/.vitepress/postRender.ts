@@ -1,8 +1,11 @@
+import type { TransformContext } from 'vitepress'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 import { SitemapStream } from 'sitemap'
-import type { TransformContext } from 'vitepress'
 import { generateOgSvg } from './utils/opengraph'
+
+const NOT_FOUND_RE = /[\\/]404\.html$/
+const INDEX_MD_RE = /((^|\/)index)?\.md$/
 
 function postRenderGeneration() {
   const links = [] as { url: string, lastmod: string, title: string }[]
@@ -15,8 +18,8 @@ function postRenderGeneration() {
       },
     } = context
 
-    if (!/[\\/]404\.html$/.test(id)) {
-      const iUrl = relativePath.replace(/((^|\/)index)?\.md$/, '$2')
+    if (!NOT_FOUND_RE.test(id)) {
+      const iUrl = relativePath.replace(INDEX_MD_RE, '$2')
       const url = iUrl === '' || iUrl.endsWith('/') ? iUrl : `${iUrl}.html`
       links.push({ url, lastmod, title })
     }

@@ -1,11 +1,10 @@
 <script setup>
-import { useData, useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 
 //   location.pathname !== "/blogs" && location.pathname !== "/blogs/";
 // this should be made reactive
 const data = useData()
 const shouldRender = () => {
-
   // if frontmatter has no `noBack` or `noBack` is false, render back button
   // otherwise, if there is no Back and `noBack` is true, don't render back button
   const shouldRenderBack = data.frontmatter.value.noBack === undefined || data.frontmatter.value.noBack !== true
@@ -27,6 +26,5 @@ const backLast = () => {
     >
       返回上一级
     </a>
-
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed, reactive, ref, watch } from 'vue'
 import { useData } from 'vitepress'
+import { computed, ref } from 'vue'
 // @ts-expect-error load data from .data files
 import { data as rawFullPosts } from '../../utils/posts.data'
 import ListProvider from './ListProvider.vue'

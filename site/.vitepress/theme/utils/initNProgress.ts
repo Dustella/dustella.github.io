@@ -1,11 +1,11 @@
-import { Router } from 'vitepress'
+import type { Router } from 'vitepress'
 
 export const initNProgress = async (router: Router) => {
-    const { default: NProgress } = await import('nprogress')
-    router.onBeforeRouteChange = () => {
-      NProgress.start()
-    }
-    router.onAfterRouteChanged = () => {
-      NProgress.done()
-    }
+  const { default: NProgress } = await import('nprogress')
+  router.onBeforeRouteChange = () => {
+    NProgress.start()
+  }
+  router.onAfterRouteChanged = () => {
+    NProgress.done()
+  }
 }
