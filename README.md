@@ -1,6 +1,20 @@
-# Colorless Vitepress Theme
+# Dustella's Candystore
 
-This is a Vitepress template for personnal blogging and stuff.
+Dustella's personal blog, powered by VitePress and Nolebase integrations.
 
-Write in `sites` folder, your article will be automatically sorted to a list page.
+## Development
 
+The project uses Node.js 24 and [pnpm](https://pnpm.io/) for local development
+and CI:
+
+```shell
+pnpm install
+pnpm dev
+```
+
+Write articles in `site/blogs`; they are automatically sorted into the blog
+list pages. Run `pnpm build` for a production build and `pnpm typecheck` to
+validate the TypeScript and Vue sources.
+
+The production artifact in `site/.vitepress/dist` is deployed by GitHub Actions
+to both GitHub Pages and Tencent EdgeOne Pages.

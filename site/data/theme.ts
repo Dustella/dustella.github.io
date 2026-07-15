@@ -2,20 +2,43 @@ import type { DefaultTheme, UserConfig } from 'vitepress'
 
 const baseConfig = () => {
   const base = {
+    lang: 'zh-CN',
     title: 'Dustella 的自留地',
     description: 'Dustella 的自留地',
   }
   const themeConfig = {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local' as const,
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索',
+            buttonAriaLabel: '搜索站点',
+          },
+          modal: {
+            noResultsText: '没有找到相关结果',
+            resetButtonTitle: '清除搜索',
+            footer: {
+              selectText: '选择',
+              navigateText: '切换',
+              closeText: '关闭',
+            },
+          },
+        },
+      },
+    },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Blogs', items:[
+      { text: 'Blogs', items: [
         {
-          text:"Tech", link:"/blogs/tech"
+          text: 'Tech',
+          link: '/blogs/tech',
         },
         {
-          text:"Life", link:"/blogs/life"
-        }
+          text: 'Life',
+          link: '/blogs/life',
+        },
       ] },
       { text: 'Projects', link: '/projects' },
       { text: 'Links', link: '/links' },

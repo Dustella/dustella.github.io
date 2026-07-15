@@ -1,4 +1,14 @@
-import type { Feature } from 'vitepress/dist/client/theme-default/components/VPFeatures.vue'
+import type { DefaultTheme } from 'vitepress/theme'
+
+interface Feature {
+  details: string
+  icon?: DefaultTheme.FeatureIcon
+  link?: string
+  linkText?: string
+  rel?: string
+  target?: string
+  title: string
+}
 
 interface MyWorks {
   // index string , value Feature

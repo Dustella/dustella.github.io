@@ -1,22 +1,21 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "module": "ESNext",
     "target": "ESNext",
-    "strict": true,
-    "rootDir": "./",
     "jsx": "preserve",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
+    "rootDir": "./",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node", "vite/client"],
+    "allowJs": true,
+    "strict": true,
     "esModuleInterop": true,
-    "types": ["node"]
+    "skipLibCheck": true
   },
   "include": [
     "env.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "vite.config.ts",
-    "friends.ts",
-    ".vitepress/theme/**/*.vue"
+    "*.ts",
+    "site/**/*.ts",
+    "site/**/*.tsx",
+    "site/**/*.vue"
   ]
 }

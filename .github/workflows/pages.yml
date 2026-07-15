@@ -23,15 +23,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          # Nolebase's Git changelog integration needs the complete history.
+          fetch-depth: 0
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
 
       - name: Install dependency and build
         run: |
-          bun i
-          bun run build
+          pnpm install --frozen-lockfile
+          pnpm build
 
       - name: Upload GhPages Artifact
         uses: actions/upload-pages-artifact@v3
@@ -62,12 +71,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Tencent EdgeOne
     steps:
-      - name: Setup Node.js
-        uses: oven-sh/setup-bun@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
-      - name: Install EdgeOne CLi
-        run:
-          bun install -g edgeone
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Download Artifact
         uses: actions/download-artifact@v4
@@ -76,7 +86,7 @@ jobs:
           path: ./dist
 
       - name: Deploy to EdgeOne Pages
-        run: bun x edgeone pages deploy ./dist -n candystore -t ${{ secrets.EDGEONE_API_TOKEN }}
+        run: pnpm dlx --allow-build=esbuild edgeone@1.6.13 pages deploy ./dist -n candystore -t ${{ secrets.EDGEONE_API_TOKEN }}
         env:
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
 
