@@ -44,7 +44,7 @@ onMounted(() => {
 
 <template>
   <main class="mx-auto max-w-[980px] px-5 pb-16 pt-12 sm:px-8 sm:pt-16">
-    <header class="mb-6 border-b border-[var(--vp-c-divider)] pb-7 sm:mb-8">
+    <header class="mb-6 border-b border-[var(--vp-c-divider)] px-3 pb-7 sm:mb-8 sm:px-4">
       <p class="mb-2 text-xs text-[var(--vp-c-brand-1)] font-semibold tracking-[0.18em] uppercase">
         Article archive
       </p>
