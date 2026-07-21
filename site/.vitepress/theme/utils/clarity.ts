@@ -1,16 +1,25 @@
-/* eslint-disable style/max-statements-per-line -- verbatim Microsoft Clarity install snippet */
+interface ClarityCommand {
+  (...args: unknown[]): void
+  q?: IArguments[]
+}
+
 export const initClarity = async (id: string) => {
-  // @ts-expect-error import for vite
   if (import.meta.env.DEV)
     return
-  (function (c, l, a, r, i, t, y) {
+
+  const clarityWindow = window as Window & { clarity?: ClarityCommand }
+  const clarityCommand: ClarityCommand = function () {
     // eslint-disable-next-line prefer-rest-params
-    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    t = l.createElement(r); t.async = 1; t.src = `https://www.clarity.ms/tag/${i}`
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y)
-  })(window, document, 'clarity', 'script', id)
+    (clarityCommand.q ||= []).push(arguments)
+  }
+  clarityWindow.clarity ||= clarityCommand
+  const script = document.createElement('script')
+  script.async = true
+  script.src = `https://www.clarity.ms/tag/${id}`
+
+  const firstScript = document.getElementsByTagName('script')[0]
+  if (firstScript?.parentNode)
+    firstScript.parentNode.insertBefore(script, firstScript)
+  else
+    document.head.append(script)
 }

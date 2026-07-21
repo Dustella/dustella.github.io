@@ -47,7 +47,7 @@ const ExtendedTheme: Theme = {
     await nolebase.enhanceApp?.(ctx)
 
     if (!import.meta.env.SSR) {
-      initNProgress(router)
+      await initNProgress(router)
       initClarity('i17ejh9rcu')
     }
     app.component('articles', ArticleList)

@@ -5,7 +5,7 @@ export const initNProgress = async (router: Router) => {
   router.onBeforeRouteChange = () => {
     NProgress.start()
   }
-  router.onAfterRouteChanged = () => {
+  router.onAfterRouteChange = () => {
     NProgress.done()
   }
 }

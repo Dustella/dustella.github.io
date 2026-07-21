@@ -30,6 +30,9 @@ importers:
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
+      '@types/nprogress':
+        specifier: ^0.2.3
+        version: 0.2.3
       '@unocss/eslint-plugin':
         specifier: ^66.6.8
         version: 66.7.5(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
@@ -1349,6 +1352,9 @@ packages:
 
   '@types/node@24.13.3':
     resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
+
+  '@types/nprogress@0.2.3':
+    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
@@ -5012,6 +5018,8 @@ snapshots:
   '@types/node@24.13.3':
     dependencies:
       undici-types: 7.18.2
+
+  '@types/nprogress@0.2.3': {}
 
   '@types/sax@1.2.7':
     dependencies:
