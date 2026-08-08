@@ -9,16 +9,16 @@ noBack: true
 
 ### Who is Dustella
 
-I am currently a postguaduate student. Call me `特菈(Tella)`.  Feel free to PM.
+Call me `特菈(Tella)`.  Feel free to PM.
 
-### Interests
+<!-- ### Interests
 
 - 🧭 **Deep Learning**, focused on `S2S Forecasts` and `Image Segmentation`
 
 - 🌍 **Web Development**, skilled at H5 Game Development and complex animations
 - ⚒️ **Reverse Engineering**, **Data Science**, among many other things related to Computer Science
 
-- 🎹 **(New) Maimai DX** (A Music Arcade Game) you are welcome to join me
+- 🎹 **(New) Maimai DX** (A Music Arcade Game) you are welcome to join me -->
 
 ### Contacts
 
