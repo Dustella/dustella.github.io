@@ -242,6 +242,17 @@ const friends: DefaultTheme.TeamMember[] = [
     avatar: 'https://img.habitats.top/2024/07/b54f2ea3abb15802b3dea932c12c79b6.webp',
     desc: '零酒精网安新手',
   },
+  {
+    name: 'Lucian',
+    links: [
+      {
+        icon: webIcon,
+        link: 'https://freeme.fun/',
+      },
+    ],
+    avatar: 'https://freeme.fun/images/lucian-profile-cutout.png',
+    desc: '搭建秩序，也保留底噪',
+  },
 ]
 
 export default friends
